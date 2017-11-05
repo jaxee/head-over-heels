@@ -9,13 +9,16 @@ public class CharacterControl : MonoBehaviour {
 	public bool inAir;
 	public int jumpCount;
 	public float jumpSpeed;
-	public float tapSpeed = 0.01f; //in seconds
-	private float lastTapTime = 0f;
+	public float tapSpeed;
+	private float lastTapTime;
 	public Rigidbody2D rb2D;
-	public int maxJumps = 1; //Maximum amount of jumps (i.e. 2 for double jumps)
+	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
 
 	void Start () {
+		maxJumps = 1;
+		tapSpeed = 0.5f;
+		lastTapTime = 0f;
 		jumpCount = maxJumps;
 		rb2D = GetComponent<Rigidbody2D>();
 		lastTapTime = 0f;
@@ -25,6 +28,10 @@ public class CharacterControl : MonoBehaviour {
 		forwardForce = 5;
 		forwardForceToggle = true;
 
+	}
+	void Tackle () {
+		//empty for now..
+		Debug.Log ("Double tap");
 	}
 	
 	// Update is called once per frame
@@ -45,11 +52,15 @@ public class CharacterControl : MonoBehaviour {
 			forwardForce = -5f;
 
 			float currentTapTime = Time.time;
-			if ((currentTapTime - lastTapTime) < tapSpeed) {
-				Debug.Log ("Double tap");
+
+			float delta = (currentTapTime - lastTapTime);
+
+
+			if (delta < tapSpeed) {
 				Tackle ();
 			} else {
 				lastTapTime = currentTapTime;
+		
 			}
 
 
@@ -58,8 +69,11 @@ public class CharacterControl : MonoBehaviour {
 			forwardForce = 5f;
 		
 			float currentTapTime = Time.time;
-			if ((currentTapTime - lastTapTime) < tapSpeed) {
-				Debug.Log ("Double tap");
+	
+			float delta = (currentTapTime - lastTapTime);
+
+			if (delta < tapSpeed) {
+
 				Tackle ();
 			} else {
 				lastTapTime = currentTapTime;
@@ -99,9 +113,7 @@ public class CharacterControl : MonoBehaviour {
 		}
 	}
 
-	void Tackle () {
-		//empty for now..
-	}
+
 
 
 }
