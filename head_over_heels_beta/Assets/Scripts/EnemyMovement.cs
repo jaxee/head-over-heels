@@ -25,9 +25,9 @@ public class EnemyMovement : MonoBehaviour
 	// Initialization
 	void Start() 
 	{
-		if (wayPoints.Length > 0) 
+		if (waypoints.Length > 0) 
 		{
-			currentWaypoint = wayPoints[0];
+			currentWaypoint = waypoints[0];
 		}
 	}
 	
@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
 	//Pause movement
 	void Pause()
 	{
-		isWaiting != isWaiting;
+		isWaiting = !isWaiting;
 	}
 
 	private void MoveTowardsWaypoint() 
@@ -54,16 +54,25 @@ public class EnemyMovement : MonoBehaviour
 		//Get waypoint position
 		Vector3 waypointPosition = currentWaypoint.transform.position;
 
-		if (Vector3.Distance (currentPosition, waypointPosition) > distanceThreshold) {
-
+		if (Vector3.Distance (currentPosition, waypointPosition) > distanceThreshold) 
+		{
 			//Determine direction
 			Vector3 direction = waypointPosition - currentPosition;
-			direction.Normalize();
+			direction.Normalize ();
 
 			//Scale movement depending on direction
-			this.transform.Translate(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime, direction.z * speed * Time.deltaTime, Space.World);
-		}
+			this.transform.Translate (direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime, direction.z * speed * Time.deltaTime, Space.World);
+		} 
 		else 
+		{
+			//If the waypoint requires waiting, pause movement
+			if (currentWaypoint.waitSeconds > 0) 
+			{
+				Pause();
+				//Unpause after wait time is finished
+				Invoke ("Pause", currentWaypoint.waitSeconds);
+			}
+		}
 
 
 	}
