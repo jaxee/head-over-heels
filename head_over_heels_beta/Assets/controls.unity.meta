@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:head_over_heels_beta/Assets/controls.unity.meta
 guid: 31d7ba9036ccb4ed28b472a087d36bb9
 timeCreated: 1509910558
+=======
+guid: 6550680062e184c5faa1794c4e69a789
+folderAsset: yes
+timeCreated: 1509915795
+>>>>>>> 6df27683d5269aceb86a951f9f66138f45acc5c0:head_over_heels_beta/Assets/Plugins.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
