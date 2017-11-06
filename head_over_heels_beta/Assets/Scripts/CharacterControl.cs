@@ -100,6 +100,8 @@ public class CharacterControl : MonoBehaviour {
 			}
 		}
 
+		//Debug.Log (jumpCount);
+
 
 	}
 
@@ -108,7 +110,7 @@ public class CharacterControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D Col)
 	{
 		//used to only jump when the character is on the ground
-		if (Col.gameObject.name == "ground") {
+		if (Col.gameObject.name == "Ground") {
 		  jumpCount = maxJumps;
 		}
 	}
