@@ -14,6 +14,7 @@ public class CharacterControl : MonoBehaviour {
 	private float lastTapTime;
 	public Rigidbody2D rb2D;
 	private float maxSpeed;
+	public bool active;
 
 	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
@@ -42,56 +43,58 @@ public class CharacterControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//Pause movement
-		if (Input.GetKeyDown ("up")) {
-			if (forwardForceToggle == true) {	
-				forwardForce = 0;
-				forwardForceToggle = false;
-			} else if (forwardForceToggle == false) {
-				forwardForce = 5;
+		if (active) {
+			//Pause movement
+			if (Input.GetKeyDown ("up")) {
+				if (forwardForceToggle == true) {	
+					forwardForce = 0;
+					forwardForceToggle = false;
+				} else if (forwardForceToggle == false) {
+					forwardForce = 5;
+					forwardForceToggle = true;
+				}
+			}
+	
+			if (Input.GetKeyDown ("left")) {
+				forwardForce = -5f;
 				forwardForceToggle = true;
-			}
-		}
-	
-		if (Input.GetKeyDown ("left")) {
-			forwardForce = -5f;
-			forwardForceToggle = true;
 
-			animator.SetInteger ("Direction", 1);
+				animator.SetInteger ("Direction", 1);
 
-			float currentTapTime = Time.time;
+				float currentTapTime = Time.time;
 
-			float delta = (currentTapTime - lastTapTime);
+				float delta = (currentTapTime - lastTapTime);
 
 
-			if (delta < tapSpeed) {
-				Tackle ();
-			} else {
-				lastTapTime = currentTapTime;
+				if (delta < tapSpeed) {
+					Tackle ();
+				} else {
+					lastTapTime = currentTapTime;
 		
+				}
+
+
 			}
-
-
-		}
-		if (Input.GetKeyDown ("right")) {
-			forwardForceToggle = true;
-			forwardForce = 5f;
-			animator.SetInteger ("Direction", 0);
+			if (Input.GetKeyDown ("right")) {
+				forwardForceToggle = true;
+				forwardForce = 5f;
+				animator.SetInteger ("Direction", 0);
 
 		
-			float currentTapTime = Time.time;
+				float currentTapTime = Time.time;
 	
-			float delta = (currentTapTime - lastTapTime);
+				float delta = (currentTapTime - lastTapTime);
 
-			if (delta < tapSpeed) {
+				if (delta < tapSpeed) {
 
-				Tackle ();
-			} else {
-				lastTapTime = currentTapTime;
+					Tackle ();
+				} else {
+					lastTapTime = currentTapTime;
 			
-			}
+				}
 		
 
+			}
 		}
 
 	}
@@ -99,27 +102,24 @@ public class CharacterControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		if (active) {
+			//limiting velocities
+			rb2D.velocity = new Vector2 (Mathf.Clamp (rb2D.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp (rb2D.velocity.y, -maxSpeed, maxSpeed));
 
-		//limiting velocities
-		rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp(rb2D.velocity.y, -maxSpeed, maxSpeed));
+			//Moving right
+			rb2D.AddForce (transform.right * forwardForce);
 
-		//Moving right
-		rb2D.AddForce(transform.right * forwardForce);
+			//Jumping
+			if (Input.GetKey ("space")) {
+				animator.SetBool ("Jump", true);
 
-		//Jumping
-		if (Input.GetKey ("space")) {
-			animator.SetBool ("Jump", true);
-
-			if (jumpCount > 0)
-			{
-				rb2D.velocity += jumpSpeed * Vector2.up;
-				jumpCount -= 1;
-				animator.SetBool ("Jump", false);
+				if (jumpCount > 0) {
+					rb2D.velocity += jumpSpeed * Vector2.up;
+					jumpCount -= 1;
+					animator.SetBool ("Jump", false);
+				}
 			}
 		}
-
-		//Debug.Log (jumpCount);
-
 
 	}
 

@@ -9,15 +9,13 @@ public class WorldSwitch : MonoBehaviour {
 	private bool switching;
 	public GameObject worldPivot;
 	public GameObject worldGroup;
-	public GameObject solCharacter;
-	public GameObject lunaCharacter;
+	public WorldManagerScript worldManager;
 	bool solActive = true;
 
 	void Start() {
 		worldPivot = GameObject.Find ("WorldPivot");
 		worldGroup = GameObject.Find ("WorldGroup");
-		solCharacter = GameObject.Find ("SolCharacter");
-		lunaCharacter = GameObject.Find ("LunaCharacter");
+		worldManager = GameObject.Find ("WorldManager").GetComponent<WorldManagerScript>();
 	}
 	
 	// Update is called once per frame
@@ -45,8 +43,6 @@ public class WorldSwitch : MonoBehaviour {
 					shouldSlide = true;
 				}
 			}
-
-			Debug.Log (worldPivot.transform.rotation.eulerAngles.z);
 		}
 		if (shouldSlide) 
 		{
@@ -57,8 +53,9 @@ public class WorldSwitch : MonoBehaviour {
 				if (worldGroup.transform.position.y <= -1.8f) {
 					worldGroup.transform.position = new Vector3 (0, -1.8f, 0);
 					shouldSlide = false;
-					switchActiveCharacter ();
 					switching = false;
+					worldManager.SwitchActiveWorld (solActive);
+					solActive = !solActive;
 				}
 			} 
 			else {
@@ -67,8 +64,9 @@ public class WorldSwitch : MonoBehaviour {
 				if (worldGroup.transform.position.y <= -1.8f) {
 					worldGroup.transform.position = new Vector3 (0, -1.8f, 0);
 					shouldSlide = false;
-					switchActiveCharacter ();
 					switching = false;
+					worldManager.SwitchActiveWorld (solActive);
+					solActive = !solActive;
 				}
 			}
 		}
@@ -78,22 +76,6 @@ public class WorldSwitch : MonoBehaviour {
 	{
 		if (!switching) {
 			shouldRotate = !shouldRotate;
-		}
-	}
-
-	public void switchActiveCharacter()
-	{
-		solActive = !solActive;
-
-		CharacterControl solControlScript = solCharacter.GetComponent<CharacterControl> ();
-		CharacterControl lunaControlScript = lunaCharacter.GetComponent<CharacterControl> ();
-
-		if (solActive) {
-			lunaControlScript.forwardForce = 0;
-			solControlScript.forwardForce = 5;
-		} else {
-			solControlScript.forwardForce = 0;
-			lunaControlScript.forwardForce = 5;
 		}
 	}
 }
