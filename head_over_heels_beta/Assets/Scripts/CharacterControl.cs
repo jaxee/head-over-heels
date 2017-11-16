@@ -74,13 +74,12 @@ public class CharacterControl : MonoBehaviour {
 						forwardForce = 10;
 					}
 
-
 					forwardForceToggle = true;
 				}
 			}
 
 			if (Input.GetKeyDown ("left")) {
-				rb2D.velocity = new Vector2 (0,0);
+				rb2D.velocity = new Vector2 (0, 0);
 				forwardForce = -10f;
 				forwardForceToggle = true;
 				animator.SetBool ("Idle", false);
@@ -102,7 +101,7 @@ public class CharacterControl : MonoBehaviour {
 
 			}
 			if (Input.GetKeyDown ("right")) {
-				rb2D.velocity = new Vector2 (0,0);
+				rb2D.velocity = new Vector2 (0, 0);
 				forwardForceToggle = true;
 				forwardForce = 10f;
 				animator.SetInteger ("Direction", 0);
@@ -122,6 +121,8 @@ public class CharacterControl : MonoBehaviour {
 
 
 			}
+		} else {
+			animator.SetBool ("Idle", true);
 		}
 
 	}

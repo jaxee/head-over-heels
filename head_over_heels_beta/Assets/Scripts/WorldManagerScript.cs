@@ -84,4 +84,12 @@ public class WorldManagerScript : MonoBehaviour {
 			}
 		}
 	}
+
+	public void PauseGame() {
+		Time.timeScale = 0.0f;
+	}
+
+	public void UnpauseGame() {
+		Time.timeScale = 1.0f;
+	}
 }
