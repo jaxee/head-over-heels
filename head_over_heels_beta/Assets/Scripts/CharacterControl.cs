@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour {
 
 	public float forwardForce;
+	private float savedForce;
 	public Animator animator;
 	public bool forwardForceToggle;
 	public bool inAir;
@@ -38,6 +39,17 @@ public class CharacterControl : MonoBehaviour {
 	void Tackle () {
 		//empty for now..
 		animator.SetBool ("Tackle", true);
+		Invoke ("EndTackle", 1.0f);
+		if (forwardForce == 0) {
+			forwardForce = 10;
+		}
+		savedForce = forwardForce;
+		forwardForce = forwardForce * 2;
+	}
+
+	void EndTackle() {
+		animator.SetBool ("Tackle", false);
+		forwardForce = savedForce;
 	}
 
 	// Update is called once per frame
@@ -67,13 +79,12 @@ public class CharacterControl : MonoBehaviour {
 						forwardForce = 10;
 					}
 
-
 					forwardForceToggle = true;
 				}
 			}
 
 			if (Input.GetKeyDown ("left")) {
-				rb2D.velocity = new Vector2 (0,0);
+				rb2D.velocity = new Vector2 (0, 0);
 				forwardForce = -10f;
 				forwardForceToggle = true;
 				animator.SetBool ("Idle", false);
@@ -95,7 +106,7 @@ public class CharacterControl : MonoBehaviour {
 
 			}
 			if (Input.GetKeyDown ("right")) {
-				rb2D.velocity = new Vector2 (0,0);
+				rb2D.velocity = new Vector2 (0, 0);
 				forwardForceToggle = true;
 				forwardForce = 10f;
 				animator.SetInteger ("Direction", 0);
@@ -115,6 +126,8 @@ public class CharacterControl : MonoBehaviour {
 
 
 			}
+		} else {
+			animator.SetBool ("Idle", true);
 		}
 
 	}
