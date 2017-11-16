@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class WorldManagerScript : MonoBehaviour {
@@ -10,6 +11,7 @@ public class WorldManagerScript : MonoBehaviour {
 	public static GameObject[] lunaEnemies;
 	public static GameObject[] solObstacles;
 	public static GameObject[] lunaObstacles;
+	public int playerLives;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +21,14 @@ public class WorldManagerScript : MonoBehaviour {
 		lunaEnemies = GameObject.FindGameObjectsWithTag ("LunaEnemy");
 		solObstacles = GameObject.FindGameObjectsWithTag ("SolObstacle");
 		lunaObstacles = GameObject.FindGameObjectsWithTag ("LunaObstacle");
+		playerLives = 3;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (playerLives == 0) {
+			SceneManager.LoadScene("LevelOne_Beta");
+		}
 	}
 
 	public void SwitchActiveWorld(bool isSolActive)

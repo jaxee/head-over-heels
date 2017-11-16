@@ -9,7 +9,7 @@ TagManager:
   - LunaEnemy
   - SolObstacle
   - LunaObstacle
-  - ToggleButton
+  - Ground
   layers:
   - Default
   - TransparentFX

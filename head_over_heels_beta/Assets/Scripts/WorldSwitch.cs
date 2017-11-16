@@ -72,7 +72,7 @@ public class WorldSwitch : MonoBehaviour {
 		}
 	}
 
-	public void OnPress()
+	public void OnClick()
 	{
 		if (!switching) {
 			shouldRotate = !shouldRotate;
