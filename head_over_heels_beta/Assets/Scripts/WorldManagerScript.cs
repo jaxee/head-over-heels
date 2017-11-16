@@ -12,6 +12,8 @@ public class WorldManagerScript : MonoBehaviour {
 	public static GameObject[] solObstacles;
 	public static GameObject[] lunaObstacles;
 	public int playerLives;
+	public int loveTokens;
+	public int storyTokens;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,9 @@ public class WorldManagerScript : MonoBehaviour {
 		solObstacles = GameObject.FindGameObjectsWithTag ("SolObstacle");
 		lunaObstacles = GameObject.FindGameObjectsWithTag ("LunaObstacle");
 		playerLives = 3;
+		loveTokens = 0;
+		storyTokens = 0;
+
 	}
 	
 	// Update is called once per frame
@@ -29,6 +34,10 @@ public class WorldManagerScript : MonoBehaviour {
 		if (playerLives == 0) {
 			SceneManager.LoadScene("LevelOne_Beta");
 		}
+	}
+
+	public void restartLevel () {
+		SceneManager.LoadScene("LevelOne_Beta");
 	}
 
 	public void SwitchActiveWorld(bool isSolActive)
