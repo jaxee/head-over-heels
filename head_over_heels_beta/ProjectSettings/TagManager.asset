@@ -10,6 +10,9 @@ TagManager:
   - SolObstacle
   - LunaObstacle
   - Ground
+  - ToggleButton
+  - Goal
+  - LoveToken
   layers:
   - Default
   - TransparentFX
