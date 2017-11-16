@@ -17,13 +17,16 @@ public class CharacterControl : MonoBehaviour {
 	private float maxSpeed;
 	public bool active;
 	private int currentDirection;
-	public bool buttonPressed;
+	public bool solbuttonPressed;
+	public bool lunabuttonPressed;
 	public bool hasReachedGoal;
 
 	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
 	void Start () {
-		buttonPressed = false;
+		solbuttonPressed = false;
+		lunabuttonPressed = false;
+
 		maxJumps = 1;
 		tapSpeed = 0.5f;
 		lastTapTime = 0f;
@@ -193,6 +196,7 @@ public class CharacterControl : MonoBehaviour {
 			}
 			jumpCount = maxJumps;
 		}
+	
 
 		//collision with button to lift pillar
 
@@ -202,10 +206,26 @@ public class CharacterControl : MonoBehaviour {
 		}
 
 		if (Col.gameObject.name == "sol_button") {
-			buttonPressed = true;
+			
 			GameObject pillar = GameObject.Find ("luna_pillar");
-			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y + 5) );
-			StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
+			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y + 4) );
+			if (solbuttonPressed == false) {	
+				StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
+			}
+			solbuttonPressed = true;
+
+
+		}
+		if (Col.gameObject.name == "luna_button") {
+			
+			GameObject pillar = GameObject.Find ("sol_pillar");
+			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y + 3) );
+			if (lunabuttonPressed == false) {
+
+				StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
+
+			}
+			lunabuttonPressed = true;
 
 
 		}
