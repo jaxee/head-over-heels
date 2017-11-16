@@ -1,25 +1,17 @@
 fileFormatVersion: 2
-guid: 7ab02b8e52da7499db0d3f62aeccd5d6
-timeCreated: 1510342076
+guid: 4d4d55c07b774488e8ae4a2f0ee97c64
+timeCreated: 1510791232
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sprite_sol_v1_0
-    21300002: sprite_sol_v1_1
-    21300004: sprite_sol_v1_2
-    21300006: sprite_sol_v1_3
-    21300008: sprite_sol_v1_4
-    21300010: sprite_sol_v1_5
-    21300012: sprite_sol_v1_6
-    21300014: sprite_sol_v1_7
-    21300016: sol_walk_0
-    21300018: sol_walk_1
-    21300020: sol_walk_2
-    21300022: sol_walk_3
-    21300024: sol_walk_4
-    21300026: sol_walk_5
-    21300028: sol_walk_6
-    21300030: sol_walk_7
+    21300000: sprite_lunaLeft_0
+    21300002: sprite_lunaLeft_1
+    21300004: sprite_lunaLeft_2
+    21300006: sprite_lunaLeft_3
+    21300008: sprite_lunaLeft_4
+    21300010: sprite_lunaLeft_5
+    21300012: sprite_lunaLeft_6
+    21300014: sprite_lunaLeft_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,7 +39,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -73,37 +65,37 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   - buildTarget: Android
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sol_walk_0
+      name: sprite_lunaLeft_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 36
-        width: 159
-        height: 224
+        x: 0
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_1
+      name: sprite_lunaLeft_1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 37
-        width: 156
-        height: 223
+        x: 223
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_2
+      name: sprite_lunaLeft_2
       rect:
         serializedVersion: 2
-        x: 481
-        y: 37
-        width: 155
-        height: 223
+        x: 446
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_3
+      name: sprite_lunaLeft_3
       rect:
         serializedVersion: 2
-        x: 701
-        y: 37
-        width: 159
-        height: 223
+        x: 669
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,13 +160,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_4
+      name: sprite_lunaLeft_4
       rect:
         serializedVersion: 2
-        x: 924
-        y: 37
-        width: 157
-        height: 223
+        x: 892
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,13 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_5
+      name: sprite_lunaLeft_5
       rect:
         serializedVersion: 2
-        x: 1146
-        y: 36
-        width: 159
-        height: 224
+        x: 1115
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_6
+      name: sprite_lunaLeft_6
       rect:
         serializedVersion: 2
-        x: 1368
-        y: 36
-        width: 160
-        height: 224
+        x: 1338
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,13 +202,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_7
+      name: sprite_lunaLeft_7
       rect:
         serializedVersion: 2
-        x: 1595
-        y: 38
-        width: 153
-        height: 222
+        x: 1561
+        y: 12
+        width: 223
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
