@@ -10,6 +10,7 @@ TagManager:
   - SolObstacle
   - LunaObstacle
   - Ground
+  - Goal
   layers:
   - Default
   - TransparentFX
