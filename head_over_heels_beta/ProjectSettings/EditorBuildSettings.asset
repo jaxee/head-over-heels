@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Tests/cinematic.unity
     guid: 104c5cb275eca344dbfa68ea2a90e0ce
   - enabled: 1
-    path: Assets/Maps/LevelOne_Beta.unity
-    guid: 21410e57bb57846a8b14923f6c170667
-  - enabled: 1
     path: Assets/Tests/cinematic_level1.unity
     guid: 4d87029bbb0abd64eab861508f23621f
+  - enabled: 1
+    path: Assets/Maps/LevelOne_Beta.unity
+    guid: 21410e57bb57846a8b14923f6c170667
