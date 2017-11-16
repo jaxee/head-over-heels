@@ -17,11 +17,12 @@ public class CharacterControl : MonoBehaviour {
 	private float maxSpeed;
 	public bool active;
 	private int currentDirection;
+	public bool buttonPressed;
 
 	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
 	void Start () {
-
+		buttonPressed = false;
 		maxJumps = 1;
 		tapSpeed = 0.5f;
 		lastTapTime = 0f;
@@ -168,6 +169,8 @@ public class CharacterControl : MonoBehaviour {
 	//handling collisions
 	void OnCollisionEnter2D(Collision2D Col)
 	{
+
+
 		//used to only jump when the character is on the ground
 		if (Col.gameObject.tag == "Ground") {
 			animator.enabled = true;
@@ -180,12 +183,27 @@ public class CharacterControl : MonoBehaviour {
 			jumpCount = maxJumps;
 		}
 
-		//if collision with a wall
-		if (Col.gameObject.name == "Wall") {
-			forwardForce *= -1;
+		//collision with button to lift pillar
+
+		//collision with button to lift pillar
+		if (Col.gameObject.name == "luna_pillar") {
+			forwardForce = 0;
+		}
+
+		if (Col.gameObject.name == "sol_button") {
+			liftPillar ();
 		}
 	}
 
+	void liftPillar (){
+		
+		if (buttonPressed == false) {
+			GameObject pillar = GameObject.Find ("luna_pillar");
+			pillar.transform.Translate (Vector2.up * 5.0f);
+		}
+
+		buttonPressed = true;
+	}
 
 
 

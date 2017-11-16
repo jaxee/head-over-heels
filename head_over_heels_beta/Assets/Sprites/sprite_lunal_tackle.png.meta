@@ -1,27 +1,18 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 3e448ce456ed34e4ab83c96558355df1
-timeCreated: 1510808850
-=======
-guid: 8c867f61d88f6430ab77f9f435ab140d
-timeCreated: 1510811660
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
+guid: adbe0346ba21d41adab051a4e37e3180
+timeCreated: 1510811688
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sprite_sol_tackle_0
-    21300002: sprite_sol_tackle_1
-    21300004: sprite_sol_tackle_2
-    21300006: sprite_sol_tackle_3
-    21300008: sprite_sol_tackle_4
-    21300010: sprite_sol_tackle_5
-    21300012: sprite_sol_tackle_6
-    21300014: sprite_sol_tackle_7
-    21300016: sprite_sol_tackle_8
-<<<<<<< HEAD
-    21300018: sprite_sol_tackle_9
-=======
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
+    21300000: sprite_lunal_tackle_0
+    21300002: sprite_lunal_tackle_1
+    21300004: sprite_lunal_tackle_2
+    21300006: sprite_lunal_tackle_3
+    21300008: sprite_lunal_tackle_4
+    21300010: sprite_lunal_tackle_5
+    21300012: sprite_lunal_tackle_6
+    21300014: sprite_lunal_tackle_7
+    21300016: sprite_lunal_tackle_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,8 +83,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-<<<<<<< HEAD
-=======
   - buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -112,25 +101,17 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sol_tackle_0
+      name: sprite_lunal_tackle_0
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 34
-        y: 0
-        width: 155
-        height: 227
-=======
         x: 0
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +119,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_1
+      name: sprite_lunal_tackle_1
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 262
-        y: 0
-        width: 156
-        height: 227
-=======
         x: 224
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +133,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_2
+      name: sprite_lunal_tackle_2
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 492
-        y: 0
-        width: 155
-        height: 227
-=======
         x: 448
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +147,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_3
+      name: sprite_lunal_tackle_3
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 716
-        y: 0
-        width: 157
-        height: 227
-=======
         x: 672
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +161,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_4
+      name: sprite_lunal_tackle_4
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 940
-        y: 0
-        width: 155
-        height: 227
-=======
         x: 896
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +175,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_5
+      name: sprite_lunal_tackle_5
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 1162
-        y: 0
-        width: 156
-        height: 227
-=======
         x: 1120
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +189,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_6
+      name: sprite_lunal_tackle_6
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 1387
-        y: 0
-        width: 156
-        height: 226
-=======
         x: 1344
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +203,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_7
+      name: sprite_lunal_tackle_7
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 1611
-        y: 0
-        width: 156
-        height: 227
-=======
         x: 1568
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,34 +217,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_8
+      name: sprite_lunal_tackle_8
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 1831
-        y: 0
-        width: 156
-        height: 226
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_9
-      rect:
-        serializedVersion: 2
-        x: 2045
-        y: 0
-        width: 156
-        height: 226
-=======
         x: 1792
         y: 5
         width: 224
         height: 255
->>>>>>> ee66aba4d1e46948c246876ce89195e4138068c9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
