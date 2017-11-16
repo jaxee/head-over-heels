@@ -7,6 +7,7 @@ public class EnemyCollision : MonoBehaviour {
 	public WorldManagerScript worldManager;
 	private bool invincible;
 	private bool flash;
+	private Rigidbody2D rigidbody;
 
 	// Use this for initialization
 	void Start () {
@@ -34,9 +35,30 @@ public class EnemyCollision : MonoBehaviour {
 		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
 			//If tackling, also get tackle force
 			if (GetComponent<Animator> ().GetBool ("Tackle")) {
-				Debug.Log ("Working");
 				Rigidbody2D rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
-				//rigidbody.MovePosition(
+				rigidbody.bodyType = RigidbodyType2D.Dynamic;
+			}
+		}
+	}
+
+	void OnCollisionStay2D (Collision2D col)
+	{
+		if (!invincible) {
+			if (col.gameObject.tag.Contains ("Obstacle") || col.gameObject.tag.Contains ("Enemy")) {
+				Debug.Log ("hit");
+				invincible = true;
+				worldManager.playerLives--;
+				Invoke ("resetInvulnerability", 2);
+				InvokeRepeating ("hitEffect", 0, 0.25f);
+			}
+		}
+
+		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
+			//If tackling, also get tackle force
+			if (GetComponent<Animator> ().GetBool ("Tackle")) {
+				rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
+				rigidbody.bodyType = RigidbodyType2D.Dynamic;
+				Invoke ("stopMovingBox", 1.0f);
 			}
 		}
 	}
@@ -51,6 +73,12 @@ public class EnemyCollision : MonoBehaviour {
 	void hitEffect()
 	{
 		flash = !flash;
+	}
+
+	void stopMovingBox()
+	{
+		rigidbody.bodyType = RigidbodyType2D.Static;
+		GetComponent<CharacterControl> ().forwardForce = 10;
 	}
 
 }
