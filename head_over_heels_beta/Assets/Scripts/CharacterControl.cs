@@ -37,7 +37,6 @@ public class CharacterControl : MonoBehaviour {
 	void Tackle () {
 		//empty for now..
 		animator.SetBool ("Tackle", true);
-		Debug.Log ("Double tap");
 	}
 
 	// Update is called once per frame
@@ -71,7 +70,7 @@ public class CharacterControl : MonoBehaviour {
 				rb2D.velocity = new Vector2 (0,0);
 				forwardForce = -10f;
 				forwardForceToggle = true;
-				animator.SetBool ("idle", false);
+				animator.SetBool ("Idle", false);
 
 				animator.SetInteger ("Direction", 1);
 
@@ -95,7 +94,7 @@ public class CharacterControl : MonoBehaviour {
 				forwardForce = 10f;
 				animator.SetInteger ("Direction", 0);
 
-				animator.SetBool ("idle", false);
+				animator.SetBool ("Idle", false);
 				float currentTapTime = Time.time;
 
 				float delta = (currentTapTime - lastTapTime);
@@ -133,7 +132,7 @@ public class CharacterControl : MonoBehaviour {
 				if (jumpCount > 0) {
 					//rb2D.velocity += jumpSpeed * Vector2.up;
 					//rb2D.velocity += jumpSpeed * Vector2.right;
-					animator.SetBool ("idle", false);
+					animator.SetBool ("Idle", false);
 					animator.SetBool ("Jump", true);
 					rb2D.AddForce(transform.up * jumpSpeed);
 					if (forwardForce > 0) { //positive going right
