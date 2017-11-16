@@ -110,7 +110,6 @@ public class CharacterControl : MonoBehaviour {
 			rb2D.AddForce(transform.right * forwardForce);
 			rb2D.velocity = new Vector2 (Mathf.Clamp (rb2D.velocity.x, -maxSpeed, maxSpeed), rb2D.velocity.y);
 
-			Debug.Log (forwardForce);
 			//Jumping
 			if (Input.GetKey ("space")) {
 				animator.SetBool ("Jump", true);
