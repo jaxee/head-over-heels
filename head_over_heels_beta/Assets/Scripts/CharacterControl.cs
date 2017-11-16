@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,50 +15,62 @@ public class CharacterControl : MonoBehaviour {
 	public Rigidbody2D rb2D;
 	private float maxSpeed;
 	public bool active;
+	private int currentDirection;
 
 	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
-
 	void Start () {
+
 		maxJumps = 1;
 		tapSpeed = 0.5f;
 		lastTapTime = 0f;
-		maxSpeed = 1f;
+		maxSpeed = 2f;
 		jumpCount = maxJumps;
 		rb2D = GetComponent<Rigidbody2D>();
 		lastTapTime = 0f;
-		jumpSpeed = 80f;
+		jumpSpeed = 380f;
 		//default movement in the right direction
 		inAir = false;
 		forwardForce = 10;
 		forwardForceToggle = true;
-		animator = this.GetComponent<Animator> ();
 	}
 	void Tackle () {
 		//empty for now..
 		animator.SetBool ("Tackle", true);
-		Debug.Log ("Double tap");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
 		if (active) {
 			//Pause movement
 			if (Input.GetKeyDown ("up")) {
+
+				currentDirection = animator.GetInteger ("Direction");
+
 				if (forwardForceToggle == true) {	
+					animator.SetBool ("Idle", true);
 					forwardForce = 0;
 					forwardForceToggle = false;
 				} else if (forwardForceToggle == false) {
-					forwardForce = 10;
+					animator.SetBool ("Idle", false);
+					Debug.Log (currentDirection);
+					if (currentDirection == 1) {
+						forwardForce = -10;
+					} else if (currentDirection == 0) {
+						forwardForce = 10;
+					}
+
+
 					forwardForceToggle = true;
 				}
 			}
-	
+
 			if (Input.GetKeyDown ("left")) {
 				rb2D.velocity = new Vector2 (0,0);
 				forwardForce = -10f;
 				forwardForceToggle = true;
+				animator.SetBool ("Idle", false);
 
 				animator.SetInteger ("Direction", 1);
 
@@ -71,7 +83,7 @@ public class CharacterControl : MonoBehaviour {
 					Tackle ();
 				} else {
 					lastTapTime = currentTapTime;
-		
+
 				}
 
 
@@ -82,9 +94,9 @@ public class CharacterControl : MonoBehaviour {
 				forwardForce = 10f;
 				animator.SetInteger ("Direction", 0);
 
-		
+				animator.SetBool ("Idle", false);
 				float currentTapTime = Time.time;
-	
+
 				float delta = (currentTapTime - lastTapTime);
 
 				if (delta < tapSpeed) {
@@ -92,9 +104,9 @@ public class CharacterControl : MonoBehaviour {
 					Tackle ();
 				} else {
 					lastTapTime = currentTapTime;
-			
+
 				}
-		
+
 
 			}
 		}
@@ -106,21 +118,34 @@ public class CharacterControl : MonoBehaviour {
 	{
 		if (active) {
 			//limiting velocities
-			rb2D.velocity = new Vector2 (Mathf.Clamp (rb2D.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp (rb2D.velocity.y, -maxSpeed, maxSpeed));
 
 			//Moving right
 
 			rb2D.AddForce(transform.right * forwardForce);
+			rb2D.velocity = new Vector2 (Mathf.Clamp (rb2D.velocity.x, -maxSpeed, maxSpeed), rb2D.velocity.y);
 
+			//Debug.Log (forwardForce);
 			//Jumping
 			if (Input.GetKey ("space")) {
 				animator.SetBool ("Jump", true);
 
 				if (jumpCount > 0) {
-					rb2D.velocity += jumpSpeed * Vector2.up;
-					rb2D.velocity += jumpSpeed * Vector2.right;
+					//rb2D.velocity += jumpSpeed * Vector2.up;
+					//rb2D.velocity += jumpSpeed * Vector2.right;
+					animator.SetBool ("Idle", false);
+					animator.SetBool ("Jump", true);
+					rb2D.AddForce(transform.up * jumpSpeed);
+					if (forwardForce > 0) { //positive going right
+						animator.enabled = false;
+
+						forwardForce = 80;
+					} else if (forwardForce < 0) { //negative going left
+						forwardForce = -80;
+						animator.enabled = false;
+					}
 					jumpCount -= 1;
 					animator.SetBool ("Jump", false);
+
 				}
 			}
 		}
@@ -132,8 +157,15 @@ public class CharacterControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D Col)
 	{
 		//used to only jump when the character is on the ground
-		if (Col.gameObject.name == "Ground") {
-		  jumpCount = maxJumps;
+		if (Col.gameObject.tag == "Ground") {
+			animator.enabled = true;
+
+			if (forwardForce > 0) { //positive going right
+				forwardForce = 10;
+			} else if (forwardForce < 0) { //negative going left
+				forwardForce = -10;
+			}
+			jumpCount = maxJumps;
 		}
 
 		//if collision with a wall
