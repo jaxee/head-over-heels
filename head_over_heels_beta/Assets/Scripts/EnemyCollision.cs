@@ -33,7 +33,11 @@ public class EnemyCollision : MonoBehaviour {
 
 		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
 			//If tackling, also get tackle force
-			col.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(Vector3.forward * 2);
+			if (GetComponent<Animator> ().GetBool ("Tackle")) {
+				Debug.Log ("Working");
+				Rigidbody2D rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
+				//rigidbody.MovePosition(
+			}
 		}
 	}
 

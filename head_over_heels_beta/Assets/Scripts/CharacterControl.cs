@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ public class CharacterControl : MonoBehaviour {
 	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
 	void Start () {
-		
+
 		maxJumps = 1;
 		tapSpeed = 0.5f;
 		lastTapTime = 0f;
@@ -37,9 +37,8 @@ public class CharacterControl : MonoBehaviour {
 	void Tackle () {
 		//empty for now..
 		animator.SetBool ("Tackle", true);
-		Debug.Log ("Double tap");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -66,12 +65,12 @@ public class CharacterControl : MonoBehaviour {
 					forwardForceToggle = true;
 				}
 			}
-	
+
 			if (Input.GetKeyDown ("left")) {
 				rb2D.velocity = new Vector2 (0,0);
 				forwardForce = -10f;
 				forwardForceToggle = true;
-				animator.SetBool ("idle", false);
+				animator.SetBool ("Idle", false);
 
 				animator.SetInteger ("Direction", 1);
 
@@ -84,7 +83,7 @@ public class CharacterControl : MonoBehaviour {
 					Tackle ();
 				} else {
 					lastTapTime = currentTapTime;
-		
+
 				}
 
 
@@ -95,9 +94,9 @@ public class CharacterControl : MonoBehaviour {
 				forwardForce = 10f;
 				animator.SetInteger ("Direction", 0);
 
-				animator.SetBool ("idle", false);
+				animator.SetBool ("Idle", false);
 				float currentTapTime = Time.time;
-	
+
 				float delta = (currentTapTime - lastTapTime);
 
 				if (delta < tapSpeed) {
@@ -105,9 +104,9 @@ public class CharacterControl : MonoBehaviour {
 					Tackle ();
 				} else {
 					lastTapTime = currentTapTime;
-			
+
 				}
-		
+
 
 			}
 		}
@@ -133,7 +132,7 @@ public class CharacterControl : MonoBehaviour {
 				if (jumpCount > 0) {
 					//rb2D.velocity += jumpSpeed * Vector2.up;
 					//rb2D.velocity += jumpSpeed * Vector2.right;
-					animator.SetBool ("idle", false);
+					animator.SetBool ("Idle", false);
 					animator.SetBool ("Jump", true);
 					rb2D.AddForce(transform.up * jumpSpeed);
 					if (forwardForce > 0) { //positive going right
@@ -166,7 +165,7 @@ public class CharacterControl : MonoBehaviour {
 			} else if (forwardForce < 0) { //negative going left
 				forwardForce = -10;
 			}
-		  jumpCount = maxJumps;
+			jumpCount = maxJumps;
 		}
 
 		//if collision with a wall
