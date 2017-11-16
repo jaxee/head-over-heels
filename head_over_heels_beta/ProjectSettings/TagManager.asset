@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - LoveToken
+  - Ground
   - Flip
+  - SolObstacle
   - SolEnemy
   - LunaEnemy
-  - SolObstacle
   - LunaObstacle
-  - Ground
-  - Goal
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - Settings
+  - 
   - 
   - 
   - 
@@ -47,10 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 2778866279
-    locked: 0
-  - name: New Layer
-    uniqueID: 1099251675
     locked: 0

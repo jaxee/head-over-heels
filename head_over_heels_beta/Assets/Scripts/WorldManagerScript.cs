@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WorldManagerScript : MonoBehaviour {
 
 	public GameObject solCharacter;
 	public GameObject lunaCharacter;
+	public Text loooveTokens;
 	public static GameObject[] solEnemies;
 	public static GameObject[] lunaEnemies;
 	public static GameObject[] solObstacles;
@@ -26,12 +28,13 @@ public class WorldManagerScript : MonoBehaviour {
 		playerLives = 3;
 		loveTokens = 0;
 		storyTokens = 0;
-
+		setTokenText ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playerLives == 0) {
+			loveTokens = 0;
 			restartLevel ();
 		}
 		if (solCharacter.GetComponent<CharacterControl> ().hasReachedGoal && lunaCharacter.GetComponent<CharacterControl> ().hasReachedGoal) {
@@ -103,5 +106,9 @@ public class WorldManagerScript : MonoBehaviour {
 
 	public void UnpauseGame() {
 		Time.timeScale = 1.0f;
+	}
+
+	public void setTokenText() {
+		loooveTokens.text = loveTokens.ToString ();
 	}
 }

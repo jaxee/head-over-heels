@@ -70,6 +70,12 @@ public class EnemyCollision : MonoBehaviour {
 		if (col.gameObject.tag == "Goal") {
 			GetComponent<CharacterControl> ().hasReachedGoal = true;
 			Debug.Log ("Goal reached");
+		} else if (col.gameObject.tag == "LoveToken") {
+			Destroy (col.gameObject);
+			worldManager.loveTokens++;
+			worldManager.setTokenText ();
+			Debug.Log ("Loooooove Token, Baby");
+			Debug.Log (worldManager.loveTokens);
 		}
 	}
 
