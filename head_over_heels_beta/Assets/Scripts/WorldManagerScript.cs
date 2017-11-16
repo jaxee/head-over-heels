@@ -32,7 +32,10 @@ public class WorldManagerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (playerLives == 0) {
-			SceneManager.LoadScene("LevelOne_Beta");
+			restartLevel ();
+		}
+		if (solCharacter.GetComponent<CharacterControl> ().hasReachedGoal && lunaCharacter.GetComponent<CharacterControl> ().hasReachedGoal) {
+			SceneManager.LoadScene("cinematic_level1");
 		}
 	}
 

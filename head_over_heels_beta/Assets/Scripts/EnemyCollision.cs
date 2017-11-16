@@ -24,7 +24,6 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		if (!invincible) {
 			if (col.gameObject.tag.Contains ("Obstacle") || col.gameObject.tag.Contains ("Enemy")) {
-				Debug.Log ("hit");
 				invincible = true;
 				worldManager.playerLives--;
 				Invoke ("resetInvulnerability", 2);
@@ -60,6 +59,13 @@ public class EnemyCollision : MonoBehaviour {
 				rigidbody.bodyType = RigidbodyType2D.Dynamic;
 				Invoke ("stopMovingBox", 1.0f);
 			}
+		}
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.gameObject.tag == "Goal") {
+			GetComponent<CharacterControl> ().hasReachedGoal = true;
+			Debug.Log ("Goal reached");
 		}
 	}
 

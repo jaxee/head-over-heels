@@ -18,6 +18,7 @@ public class CharacterControl : MonoBehaviour {
 	public bool active;
 	private int currentDirection;
 	public bool buttonPressed;
+	public bool hasReachedGoal;
 
 	public int maxJumps; //Maximum amount of jumps (i.e. 2 for double jumps)
 
