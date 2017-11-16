@@ -33,10 +33,12 @@ public class EnemyCollision : MonoBehaviour {
 
 		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
 			//If tackling, also get tackle force
+			/* Remove for now due to bugs
 			if (GetComponent<Animator> ().GetBool ("Tackle")) {
 				Rigidbody2D rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
 				rigidbody.bodyType = RigidbodyType2D.Dynamic;
 			}
+			*/
 		}
 	}
 
@@ -53,12 +55,14 @@ public class EnemyCollision : MonoBehaviour {
 		}
 
 		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
-			//If tackling, also get tackle force
+			// If tackling
+			/* Remove for now due to bugs
 			if (GetComponent<Animator> ().GetBool ("Tackle")) {
 				rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
 				rigidbody.bodyType = RigidbodyType2D.Dynamic;
 				Invoke ("stopMovingBox", 1.0f);
 			}
+			*/
 		}
 	}
 

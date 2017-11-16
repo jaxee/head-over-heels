@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114212433766331846}
   - component: {fileID: 61981273645518606}
   m_Layer: 0
-  m_Name: Waypoint1
+  m_Name: Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 61255282380566450}
   - component: {fileID: 50861768353455854}
   m_Layer: 0
-  m_Name: sparky_run_0
+  m_Name: Enemy_Sparky
   m_TagString: SolEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

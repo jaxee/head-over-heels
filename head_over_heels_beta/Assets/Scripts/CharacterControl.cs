@@ -40,12 +40,14 @@ public class CharacterControl : MonoBehaviour {
 	void Tackle () {
 		//empty for now..
 		animator.SetBool ("Tackle", true);
+		/* Removing for now due to bugs
 		Invoke ("EndTackle", 1.0f);
 		if (forwardForce == 0) {
 			forwardForce = 10;
 		}
 		savedForce = forwardForce;
 		forwardForce = forwardForce * 2;
+		*/
 	}
 
 	void EndTackle() {
