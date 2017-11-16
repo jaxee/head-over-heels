@@ -43,7 +43,12 @@ public class CharacterControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
 		if (active) {
+
+
+
 			//Pause movement
 			if (Input.GetKeyDown ("up")) {
 
@@ -149,6 +154,8 @@ public class CharacterControl : MonoBehaviour {
 
 				}
 			}
+
+
 		}
 
 	}
@@ -179,19 +186,31 @@ public class CharacterControl : MonoBehaviour {
 		}
 
 		if (Col.gameObject.name == "sol_button") {
-			liftPillar ();
-		}
-	}
-
-	void liftPillar (){
-		
-		if (buttonPressed == false) {
+			buttonPressed = true;
 			GameObject pillar = GameObject.Find ("luna_pillar");
-			pillar.transform.Translate (Vector2.up * 5.0f);
-		}
+			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y + 5) );
+			StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
 
-		buttonPressed = true;
+
+		}
 	}
+	public IEnumerator MoveOverSeconds (GameObject objectToMove, Vector3 end, float seconds)
+	{
+		float elapsedTime = 0;
+		Vector3 startingPos = objectToMove.transform.position;
+		while (elapsedTime < seconds)
+		{
+			objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+			elapsedTime += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+		}
+		objectToMove.transform.position = end;
+	}
+
+
+
+
+
 
 
 
