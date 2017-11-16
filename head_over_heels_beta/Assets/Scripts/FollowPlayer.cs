@@ -23,7 +23,6 @@ public class FollowPlayer : MonoBehaviour {
 
 		// Moving left
 		if (playerControls.forwardForce < 0) {
-			
 			if (Mathf.Abs (player.transform.position.x - transform.position.x) > maxDistance) {
 				if (player.transform.position.x + maxDistance < transform.position.x) {
 					horizontalPosition = player.transform.position.x + maxDistance;
@@ -32,7 +31,6 @@ public class FollowPlayer : MonoBehaviour {
 			else {
 				horizontalPosition = transform.position.x;
 			}
-
 		}
 		// Moving right
 		if (playerControls.forwardForce > 0) {
