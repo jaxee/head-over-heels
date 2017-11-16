@@ -36,8 +36,6 @@ public class EnemyMovement : MonoBehaviour
 	
 	void Update() 
 	{
-		Debug.Log ("Current target waypoint: " + currentWaypoint);
-
 		//Check if there is a waypoint set and if the wait time is finished
 		if (currentWaypoint != null && !isWaiting) 
 		{
