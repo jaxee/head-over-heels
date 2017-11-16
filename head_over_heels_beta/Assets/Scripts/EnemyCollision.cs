@@ -30,6 +30,11 @@ public class EnemyCollision : MonoBehaviour {
 				InvokeRepeating ("hitEffect", 0, 0.25f);
 			}
 		}
+
+		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
+			//If tackling, also get tackle force
+			col.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(Vector3.forward * 2);
+		}
 	}
 
 	void resetInvulnerability()
