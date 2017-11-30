@@ -204,7 +204,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5c6ed10f95241cb4b950540fa94a8370, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0356a1ae7c8c88649be2e580eb1956f0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -217,7 +217,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SolIdle
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101506746211635382}
@@ -231,7 +231,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 59d42e8e71c148449af4319c09b8d833, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1f06ab6609b404f4f864dae362a02df9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -258,7 +258,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7dc30e416ea45544789ad7d62bf91724, type: 2}
+  m_Motion: {fileID: 7400000, guid: e88ce77740871f343a4ee3abdfd25845, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
