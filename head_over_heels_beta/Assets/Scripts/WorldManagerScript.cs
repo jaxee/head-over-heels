@@ -59,15 +59,16 @@ public class WorldManagerScript : MonoBehaviour {
 		}
 		if (playerLives == 2) {
 			lives.sprite = livesTwo;
-			//Debug.Log ("Two lives");
 		} else if (playerLives == 1) {
 			lives.sprite = livesOne;
-			Debug.Log ("One Life");
 		} else if (playerLives == 0) {
 			lives.sprite = livesZero;
 			loveTokens = 0;
-			Debug.Log ("Dead");
-			restartLevel ();
+			solCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
+			solCharacter.GetComponent<PlayerController> ().isActive = false;
+			lunaCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
+			lunaCharacter.GetComponent<PlayerController> ().isActive = false;
+			Invoke ("Restart", 1);
 		}
 
 		if (solCharacter.GetComponent<PlayerController> ().hasReachedGoal && lunaCharacter.GetComponent<PlayerController> ().hasReachedGoal) {
@@ -172,5 +173,9 @@ public class WorldManagerScript : MonoBehaviour {
 		} else {
 			isManualRotationOn = true;
 		}
+	}
+
+	public void Restart() {
+		restartLevel ();
 	}
 }

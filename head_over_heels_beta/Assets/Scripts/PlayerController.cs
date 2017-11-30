@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 	public Rigidbody2D playerRigidBody;
 	SpriteRenderer playerRenderer;
-	Animator playerAnimator;
+	public Animator playerAnimator;
 
 	// Movement
 	public float maxSpeed;
