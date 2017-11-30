@@ -58,7 +58,7 @@ public class WorldManagerScript : MonoBehaviour {
 			restartLevel ();
 		}
 
-		if (solCharacter.GetComponent<CharacterControl> ().hasReachedGoal && lunaCharacter.GetComponent<CharacterControl> ().hasReachedGoal) {
+		if (solCharacter.GetComponent<PlayerController> ().hasReachedGoal && lunaCharacter.GetComponent<PlayerController> ().hasReachedGoal) {
 			SceneManager.LoadScene("cinematic_level1");
 		}
 	}
@@ -79,8 +79,8 @@ public class WorldManagerScript : MonoBehaviour {
 
 	public void SwitchActiveCharacter(bool isSolActive)
 	{
-		lunaCharacter.GetComponent<CharacterControl>().active = isSolActive ? true : false;
-		solCharacter.GetComponent<CharacterControl>().active = isSolActive ? false : true;
+		lunaCharacter.GetComponent<PlayerController>().isActive = isSolActive ? true : false;
+		solCharacter.GetComponent<PlayerController>().isActive = isSolActive ? false : true;
 	}
 
 	public void PauseEnemies(bool isSolActive)

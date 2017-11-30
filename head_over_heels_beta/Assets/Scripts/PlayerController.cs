@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
 	// Active player
 	public bool isActive;
 
+	// Game events
+	public bool hasReachedGoal;
+
+
 	// Use this for initialization
 	void Start () {
 		playerRigidBody = GetComponent<Rigidbody2D>();
@@ -43,7 +47,6 @@ public class PlayerController : MonoBehaviour {
 
 			if (Input.GetKeyDown (KeyCode.L) && !isTackling) {
 				isTackling = true;
-
 			}
 
 			if (grounded && Input.GetAxis ("Jump") > 0) {
@@ -129,7 +132,7 @@ public class PlayerController : MonoBehaviour {
 	void EndTackle() {
 		isTackling = false;
 
-		// Play Tackle animation
+		// Stop Tackle animation
 		playerAnimator.SetBool ("ShouldTackle", isTackling);
 	}
 }

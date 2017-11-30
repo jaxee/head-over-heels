@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
 
 	public GameObject player;
-	public CharacterControl playerControls;
+	public PlayerController playerController;
 	public float maxHorizontalDistance;
 	public float minVerticalDistance;
 	public float maxVerticalDistance;
@@ -17,7 +17,7 @@ public class FollowPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		verticalOffset = transform.position.y - player.transform.position.y;
-		playerControls = player.GetComponent<CharacterControl> ();
+		playerController = player.GetComponent<PlayerController> ();
 		horizontalPosition = transform.position.x;
 		verticalPosition = player.transform.position.y + verticalOffset;
 	}
@@ -26,21 +26,21 @@ public class FollowPlayer : MonoBehaviour {
 	void Update () {
 
 		// Jumping up
-		if (playerControls.rb2D.velocity.y > 0) {
+		if (playerController.playerRigidBody.velocity.y > 0) {
 			if (Mathf.Abs (player.transform.position.y - verticalPosition) < minVerticalDistance) {
 				verticalPosition = player.transform.position.y + minVerticalDistance;
 			}
 		}
 
 		// Falling down
-		if (playerControls.rb2D.velocity.y < 0) {
+		if (playerController.playerRigidBody.velocity.y < 0) {
 			if (Mathf.Abs (player.transform.position.y - verticalPosition) > maxVerticalDistance) {
 				verticalPosition = player.transform.position.y + maxVerticalDistance;
 			}
 		}
 
 		// Moving left
-		if (playerControls.forwardForce < 0) {
+		if (playerController.playerRigidBody.velocity.x < 0) {
 			if (Mathf.Abs (player.transform.position.x - transform.position.x) > maxHorizontalDistance) {
 				if (player.transform.position.x + maxHorizontalDistance < transform.position.x) {
 					horizontalPosition = player.transform.position.x + maxHorizontalDistance;
@@ -51,7 +51,7 @@ public class FollowPlayer : MonoBehaviour {
 			}
 		}
 		// Moving right
-		if (playerControls.forwardForce > 0) {
+		if (playerController.playerRigidBody.velocity.x > 0) {
 			if (Mathf.Abs (player.transform.position.x - transform.position.x) > maxHorizontalDistance) {
 				if (player.transform.position.x - maxHorizontalDistance > transform.position.x) {
 					horizontalPosition = player.transform.position.x - maxHorizontalDistance;
