@@ -1,15 +1,19 @@
 fileFormatVersion: 2
-guid: 8056a420d44b77149936b747d3c15800
-timeCreated: 1512073818
+guid: 6670ed0a84ed3734a8eab1a5d357f25f
+timeCreated: 1512072558
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sol_walk_0
-    21300002: sol_walk_1
-    21300004: sol_walk_2
-    21300006: sol_walk_3
-    21300008: sol_walk_4
-    21300010: sol_walk_5
+    21300000: luna_Tackle_0
+    21300002: luna_Tackle_1
+    21300004: luna_Tackle_2
+    21300006: luna_Tackle_3
+    21300008: luna_Tackle_4
+    21300010: luna_Tackle_5
+    21300012: luna_Tackle_6
+    21300014: luna_Tackle_7
+    21300016: luna_Tackle_8
+    21300018: luna_Tackle_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sol_walk_0
+      name: luna_Tackle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -98,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_1
+      name: luna_Tackle_1
       rect:
         serializedVersion: 2
         x: 223
@@ -112,7 +116,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_2
+      name: luna_Tackle_2
       rect:
         serializedVersion: 2
         x: 446
@@ -126,7 +130,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_3
+      name: luna_Tackle_3
       rect:
         serializedVersion: 2
         x: 669
@@ -140,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_4
+      name: luna_Tackle_4
       rect:
         serializedVersion: 2
         x: 892
@@ -154,10 +158,66 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_5
+      name: luna_Tackle_5
       rect:
         serializedVersion: 2
         x: 1115
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: luna_Tackle_6
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: luna_Tackle_7
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: luna_Tackle_8
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: luna_Tackle_9
+      rect:
+        serializedVersion: 2
+        x: 2007
         y: 0
         width: 223
         height: 226

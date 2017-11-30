@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour {
 			direction = moveRight ? 1 : -1;
 
 			// Eventually will need touch input, or we make a new input mapping
-			if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
+			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				shouldMove = !shouldMove;
 
 				if (shouldMove) {

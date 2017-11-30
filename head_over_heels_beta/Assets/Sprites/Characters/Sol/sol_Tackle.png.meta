@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 3e448ce456ed34e4ab83c96558355df1
-timeCreated: 1511924962
+guid: a76f5ddcffaa1c74d873ad499633b561
+timeCreated: 1512073791
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sprite_sol_tackle_0
-    21300002: sprite_sol_tackle_1
-    21300004: sprite_sol_tackle_2
-    21300006: sprite_sol_tackle_3
-    21300008: sprite_sol_tackle_4
-    21300010: sprite_sol_tackle_5
-    21300012: sprite_sol_tackle_6
-    21300014: sprite_sol_tackle_7
-    21300016: sprite_sol_tackle_8
-    21300018: sprite_sol_tackle_9
+    21300000: sol_Tackle_0
+    21300002: sol_Tackle_1
+    21300004: sol_Tackle_2
+    21300006: sol_Tackle_3
+    21300008: sol_Tackle_4
+    21300010: sol_Tackle_5
+    21300012: sol_Tackle_6
+    21300014: sol_Tackle_7
+    21300016: sol_Tackle_8
+    21300018: sol_Tackle_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -88,96 +88,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sol_tackle_0
+      name: sol_Tackle_0
       rect:
         serializedVersion: 2
-        x: 34
+        x: 0
         y: 0
-        width: 155
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_1
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 0
-        width: 156
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_2
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 0
-        width: 155
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_3
-      rect:
-        serializedVersion: 2
-        x: 716
-        y: 0
-        width: 157
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_4
-      rect:
-        serializedVersion: 2
-        x: 940
-        y: 0
-        width: 155
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_5
-      rect:
-        serializedVersion: 2
-        x: 1162
-        y: 0
-        width: 156
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_6
-      rect:
-        serializedVersion: 2
-        x: 1387
-        y: 0
-        width: 156
+        width: 223
         height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,26 +102,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_7
+      name: sol_Tackle_1
       rect:
         serializedVersion: 2
-        x: 1611
+        x: 223
         y: 0
-        width: 156
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sprite_sol_tackle_8
-      rect:
-        serializedVersion: 2
-        x: 1831
-        y: 0
-        width: 156
+        width: 223
         height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -214,12 +116,110 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_tackle_9
+      name: sol_Tackle_2
       rect:
         serializedVersion: 2
-        x: 2045
+        x: 446
         y: 0
-        width: 156
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_3
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_4
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_5
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_6
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_7
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_8
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_Tackle_9
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 0
+        width: 223
         height: 226
       alignment: 0
       pivot: {x: 0, y: 0}

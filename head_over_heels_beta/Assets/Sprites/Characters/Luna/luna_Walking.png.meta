@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: 8056a420d44b77149936b747d3c15800
-timeCreated: 1512073818
+guid: 505da55b04715f74eb5b2c3714ed270d
+timeCreated: 1512071850
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sol_walk_0
-    21300002: sol_walk_1
-    21300004: sol_walk_2
-    21300006: sol_walk_3
-    21300008: sol_walk_4
-    21300010: sol_walk_5
+    21300000: luna_Walking_0
+    21300002: luna_Walking_1
+    21300004: luna_Walking_2
+    21300006: luna_Walking_3
+    21300008: luna_Walking_4
+    21300010: luna_Walking_5
+    21300012: luna_Walking_6
+    21300014: luna_Walking_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sol_walk_0
+      name: luna_Walking_0
       rect:
         serializedVersion: 2
         x: 0
@@ -98,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_1
+      name: luna_Walking_1
       rect:
         serializedVersion: 2
         x: 223
@@ -112,7 +114,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_2
+      name: luna_Walking_2
       rect:
         serializedVersion: 2
         x: 446
@@ -126,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_3
+      name: luna_Walking_3
       rect:
         serializedVersion: 2
         x: 669
@@ -140,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_4
+      name: luna_Walking_4
       rect:
         serializedVersion: 2
         x: 892
@@ -154,10 +156,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_5
+      name: luna_Walking_5
       rect:
         serializedVersion: 2
         x: 1115
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: luna_Walking_6
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: luna_Walking_7
+      rect:
+        serializedVersion: 2
+        x: 1561
         y: 0
         width: 223
         height: 226

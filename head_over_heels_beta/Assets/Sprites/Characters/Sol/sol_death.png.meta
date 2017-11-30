@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 8056a420d44b77149936b747d3c15800
-timeCreated: 1512073818
+guid: 178ae24bfb7a4c044bf04d52836b58ad
+timeCreated: 1512073742
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sol_walk_0
-    21300002: sol_walk_1
-    21300004: sol_walk_2
-    21300006: sol_walk_3
-    21300008: sol_walk_4
-    21300010: sol_walk_5
+    21300000: sol_death_0
+    21300002: sol_death_1
+    21300004: sol_death_2
+    21300006: sol_death_3
+    21300008: sol_death_4
+    21300010: sol_death_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sol_walk_0
+      name: sol_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -98,7 +98,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_1
+      name: sol_death_1
       rect:
         serializedVersion: 2
         x: 223
@@ -112,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_2
+      name: sol_death_2
       rect:
         serializedVersion: 2
         x: 446
@@ -126,7 +126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_3
+      name: sol_death_3
       rect:
         serializedVersion: 2
         x: 669
@@ -140,7 +140,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_4
+      name: sol_death_4
       rect:
         serializedVersion: 2
         x: 892
@@ -154,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sol_walk_5
+      name: sol_death_5
       rect:
         serializedVersion: 2
         x: 1115

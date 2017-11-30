@@ -53,7 +53,7 @@ public class WorldManagerScript : MonoBehaviour {
 
 		if (storyTokens == 1) {
 			unlockMysteryBox = true;
-			mysteryBox.sprite = mysteryBoxUnlocked;
+			//mysteryBox.sprite = mysteryBoxUnlocked;
 		}
 		if (playerLives == 2) {
 			lives.sprite = livesTwo;

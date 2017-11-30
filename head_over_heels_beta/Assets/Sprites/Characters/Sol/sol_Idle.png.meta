@@ -1,33 +1,33 @@
 fileFormatVersion: 2
-guid: 81799fb906ae54e1c823e91f5b289177
-timeCreated: 1511848733
+guid: 66affc136102ddd4a96145315ec93e7b
+timeCreated: 1512073781
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sprite_sol_idle_0
-    21300002: sprite_sol_idle_1
-    21300004: sprite_sol_idle_2
-    21300006: sprite_sol_idle_3
-    21300008: sprite_sol_idle_4
-    21300010: sprite_sol_idle_5
-    21300012: sprite_sol_idle_6
-    21300014: sprite_sol_idle_7
-    21300016: sprite_sol_idle_8
-    21300018: sprite_sol_idle_9
-    21300020: sprite_sol_idle_10
-    21300022: sprite_sol_idle_11
-    21300024: sprite_sol_idle_12
-    21300026: sprite_sol_idle_13
-    21300028: sprite_sol_idle_14
-    21300030: sprite_sol_idle_15
-    21300032: sprite_sol_idle_16
-    21300034: sprite_sol_idle_17
-    21300036: sprite_sol_idle_18
-    21300038: sprite_sol_idle_19
-    21300040: sprite_sol_idle_20
-    21300042: sprite_sol_idle_21
-    21300044: sprite_sol_idle_22
-    21300046: sprite_sol_idle_23
+    21300000: sol_Idle_0
+    21300002: sol_Idle_1
+    21300004: sol_Idle_2
+    21300006: sol_Idle_3
+    21300008: sol_Idle_4
+    21300010: sol_Idle_5
+    21300012: sol_Idle_6
+    21300014: sol_Idle_7
+    21300016: sol_Idle_8
+    21300018: sol_Idle_9
+    21300020: sol_Idle_10
+    21300022: sol_Idle_11
+    21300024: sol_Idle_12
+    21300026: sol_Idle_13
+    21300028: sol_Idle_14
+    21300030: sol_Idle_15
+    21300032: sol_Idle_16
+    21300034: sol_Idle_17
+    21300036: sol_Idle_18
+    21300038: sol_Idle_19
+    21300040: sol_Idle_20
+    21300042: sol_Idle_21
+    21300044: sol_Idle_22
+    21300046: sol_Idle_23
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -102,337 +102,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sol_idle_0
+      name: sol_Idle_0
       rect:
         serializedVersion: 2
-        x: 199
+        x: 0
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_1
+      name: sol_Idle_1
       rect:
         serializedVersion: 2
-        x: 459
+        x: 223
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_2
+      name: sol_Idle_2
       rect:
         serializedVersion: 2
-        x: 716
+        x: 446
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_3
+      name: sol_Idle_3
       rect:
         serializedVersion: 2
-        x: 976
+        x: 669
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_4
+      name: sol_Idle_4
       rect:
         serializedVersion: 2
-        x: 1236
+        x: 892
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_5
+      name: sol_Idle_5
       rect:
         serializedVersion: 2
-        x: 1496
+        x: 1115
         y: 0
-        width: 187
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_6
+      name: sol_Idle_6
       rect:
         serializedVersion: 2
-        x: 1756
+        x: 1338
         y: 0
-        width: 187
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_7
+      name: sol_Idle_7
       rect:
         serializedVersion: 2
-        x: 2016
+        x: 1561
         y: 0
-        width: 183
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_8
+      name: sol_Idle_8
       rect:
         serializedVersion: 2
-        x: 2277
+        x: 1784
         y: 0
-        width: 183
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_9
+      name: sol_Idle_9
       rect:
         serializedVersion: 2
-        x: 2533
+        x: 2007
         y: 0
-        width: 187
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_10
+      name: sol_Idle_10
       rect:
         serializedVersion: 2
-        x: 2794
+        x: 2230
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_11
+      name: sol_Idle_11
       rect:
         serializedVersion: 2
-        x: 3054
+        x: 2453
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_12
+      name: sol_Idle_12
       rect:
         serializedVersion: 2
-        x: 3314
+        x: 2676
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_13
+      name: sol_Idle_13
       rect:
         serializedVersion: 2
-        x: 3574
+        x: 2899
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_14
+      name: sol_Idle_14
       rect:
         serializedVersion: 2
-        x: 3834
+        x: 3122
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_15
+      name: sol_Idle_15
       rect:
         serializedVersion: 2
-        x: 4091
+        x: 3345
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_16
+      name: sol_Idle_16
       rect:
         serializedVersion: 2
-        x: 4351
+        x: 3568
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_17
+      name: sol_Idle_17
       rect:
         serializedVersion: 2
-        x: 4611
+        x: 3791
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_18
+      name: sol_Idle_18
       rect:
         serializedVersion: 2
-        x: 4871
+        x: 4014
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_19
+      name: sol_Idle_19
       rect:
         serializedVersion: 2
-        x: 5131
+        x: 4237
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_20
+      name: sol_Idle_20
       rect:
         serializedVersion: 2
-        x: 5391
+        x: 4460
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_21
+      name: sol_Idle_21
       rect:
         serializedVersion: 2
-        x: 5651
+        x: 4683
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_22
+      name: sol_Idle_22
       rect:
         serializedVersion: 2
-        x: 5908
+        x: 4906
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sprite_sol_idle_23
+      name: sol_Idle_23
       rect:
         serializedVersion: 2
-        x: 6168
+        x: 5129
         y: 0
-        width: 186
-        height: 260
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
