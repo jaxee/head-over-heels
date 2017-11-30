@@ -16,6 +16,9 @@ public class WorldManagerScript : MonoBehaviour {
 	public int playerLives;
 	public int loveTokens;
 	public int storyTokens;
+	public bool isMusicOn;
+	public bool isSoundOn;
+	public bool isManualRotationOn;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +32,9 @@ public class WorldManagerScript : MonoBehaviour {
 		loveTokens = 0;
 		storyTokens = 0;
 		setTokenText ();
+		isMusicOn = true;
+		isSoundOn = true;
+		isManualRotationOn = true;
 	}
 	
 	// Update is called once per frame
@@ -110,5 +116,29 @@ public class WorldManagerScript : MonoBehaviour {
 
 	public void setTokenText() {
 		loooveTokens.text = loveTokens.ToString ();
+	}
+
+	public void switchMusic () {
+		if (isMusicOn) {
+			isMusicOn = false;
+		} else {
+			isMusicOn = true;
+		}
+	}
+
+	public void switchSound () {
+		if (isSoundOn) {
+			isSoundOn = false;
+		} else {
+			isSoundOn = true;
+		}
+	}
+
+	public void switchManualRotation () {
+		if (isManualRotationOn) {
+			isManualRotationOn = false;
+		} else {
+			isManualRotationOn = true;
+		}
 	}
 }
