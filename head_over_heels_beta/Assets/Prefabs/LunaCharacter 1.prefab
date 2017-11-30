@@ -61,9 +61,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &61646097029315736
 BoxCollider2D:
@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldManager: {fileID: 0}
+  solbuttonPressed: 0
+  lunabuttonPressed: 0
 --- !u!114 &114974577114863364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +141,7 @@ MonoBehaviour:
   tapSpeed: 0
   rb2D: {fileID: 0}
   active: 0
+  hasReachedGoal: 0
   maxJumps: 0
 --- !u!212 &212947172893123010
 SpriteRenderer:

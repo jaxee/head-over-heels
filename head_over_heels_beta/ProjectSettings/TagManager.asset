@@ -12,6 +12,7 @@ TagManager:
   - LunaEnemy
   - LunaObstacle
   - Goal
+  - Pit
   layers:
   - Default
   - TransparentFX
