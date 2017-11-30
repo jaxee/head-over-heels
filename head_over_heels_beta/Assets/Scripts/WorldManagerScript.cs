@@ -31,6 +31,8 @@ public class WorldManagerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Screen.SetResolution (600, 800, true);
+
 		solCharacter = GameObject.Find ("SolCharacter");
 		lunaCharacter = GameObject.Find ("LunaCharacter");
 		solEnemies = GameObject.FindGameObjectsWithTag ("SolEnemy");
