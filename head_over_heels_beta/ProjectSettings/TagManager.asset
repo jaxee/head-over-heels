@@ -13,6 +13,7 @@ TagManager:
   - LunaObstacle
   - Goal
   - Pit
+  - StoryToken
   layers:
   - Default
   - TransparentFX

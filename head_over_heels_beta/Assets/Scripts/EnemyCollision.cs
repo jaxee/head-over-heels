@@ -149,6 +149,13 @@ public class EnemyCollision : MonoBehaviour {
 			Debug.Log ("Loooooove Token, Baby");
 			Debug.Log (worldManager.loveTokens);
 		}
+		else if (col.gameObject.tag == "StoryToken") {
+			Destroy (col.gameObject);
+			worldManager.storyTokens++;
+			worldManager.setTokenText ();
+			Debug.Log ("Story Token, Baby");
+			Debug.Log (worldManager.storyTokens);
+		}
 		else if (col.gameObject.tag == "Pit") {
 			Destroy (col.gameObject);
 			Debug.Log ("Falling into the pit");

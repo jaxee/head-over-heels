@@ -9,7 +9,10 @@ public class WorldManagerScript : MonoBehaviour {
 	public GameObject solCharacter;
 	public GameObject lunaCharacter;
 	public Text loooveTokens;
+	public Text storyTokensText;
 	public Image lives;
+	public Image mysteryBox;
+	public Sprite mysteryBoxUnlocked;
 	public static GameObject[] solEnemies;
 	public static GameObject[] lunaEnemies;
 	public static GameObject[] solObstacles;
@@ -17,6 +20,7 @@ public class WorldManagerScript : MonoBehaviour {
 	public int playerLives;
 	public int loveTokens;
 	public int storyTokens;
+	public bool unlockMysteryBox;
 	public bool isMusicOn;
 	public bool isSoundOn;
 	public bool isManualRotationOn;
@@ -28,7 +32,7 @@ public class WorldManagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		solCharacter = GameObject.Find ("SolCharacter");
-		lunaCharacter = GameObject.Find ("LunaCharacter");	
+		lunaCharacter = GameObject.Find ("LunaCharacter");
 		solEnemies = GameObject.FindGameObjectsWithTag ("SolEnemy");
 		lunaEnemies = GameObject.FindGameObjectsWithTag ("LunaEnemy");
 		solObstacles = GameObject.FindGameObjectsWithTag ("SolObstacle");
@@ -37,6 +41,7 @@ public class WorldManagerScript : MonoBehaviour {
 		livesOne = Resources.Load<Sprite> ("Life-half");
 		livesZero = Resources.Load<Sprite> ("Life-dead");
 		lives = GameObject.Find("Lives").GetComponent<Image>();
+		unlockMysteryBox = false;
 		playerLives = 2;
 		loveTokens = 0;
 		storyTokens = 0;
@@ -45,9 +50,14 @@ public class WorldManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (storyTokens == 1) {
+			unlockMysteryBox = true;
+			mysteryBox.sprite = mysteryBoxUnlocked;
+		}
 		if (playerLives == 2) {
 			lives.sprite = livesTwo;
-			Debug.Log ("Two lives");
+			//Debug.Log ("Two lives");
 		} else if (playerLives == 1) {
 			lives.sprite = livesOne;
 			Debug.Log ("One Life");
@@ -131,6 +141,11 @@ public class WorldManagerScript : MonoBehaviour {
 
 	public void setTokenText() {
 		loooveTokens.text = loveTokens.ToString ();
+	}
+
+	public void setStoryTokenText() {
+		storyTokensText.text = storyTokens.ToString ();
+
 	}
 
 	public void switchMusic () {
