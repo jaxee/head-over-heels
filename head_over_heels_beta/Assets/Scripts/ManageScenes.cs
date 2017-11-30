@@ -8,6 +8,7 @@ public class ManageScenes : MonoBehaviour {
 
 	public Button levelOne;
 	public Button startLevelOne;
+	public Button backToHome;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,10 @@ public class ManageScenes : MonoBehaviour {
 		if (startLevelOne != null) {
 			startLevelOne.onClick.AddListener(StartLevelOne);
 		}
+
+		if (backToHome != null) {
+			backToHome.onClick.AddListener(ReturnToHome);
+		}
 	}
 	
 	void StartAnimaticScene () {
@@ -27,7 +32,12 @@ public class ManageScenes : MonoBehaviour {
 
 	void StartLevelOne () {
 		Debug.Log("Begin level one!");
-		SceneManager.LoadScene("LevelOne_Beta", LoadSceneMode.Single);
+		SceneManager.LoadScene("LevelOne_Beta_2", LoadSceneMode.Single);
+	}
+
+	void ReturnToHome () {
+		Debug.Log ("Return to home screen!");
+		SceneManager.LoadScene ("interface", LoadSceneMode.Single);
 	}
 }
 

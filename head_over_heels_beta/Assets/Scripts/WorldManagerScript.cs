@@ -9,6 +9,7 @@ public class WorldManagerScript : MonoBehaviour {
 	public GameObject solCharacter;
 	public GameObject lunaCharacter;
 	public Text loooveTokens;
+	public Image lives;
 	public static GameObject[] solEnemies;
 	public static GameObject[] lunaEnemies;
 	public static GameObject[] solObstacles;
@@ -20,6 +21,10 @@ public class WorldManagerScript : MonoBehaviour {
 	public bool isSoundOn;
 	public bool isManualRotationOn;
 
+	private Sprite livesTwo;
+	private Sprite livesOne;
+	private Sprite livesZero;
+
 	// Use this for initialization
 	void Start () {
 		solCharacter = GameObject.Find ("SolCharacter");
@@ -28,28 +33,38 @@ public class WorldManagerScript : MonoBehaviour {
 		lunaEnemies = GameObject.FindGameObjectsWithTag ("LunaEnemy");
 		solObstacles = GameObject.FindGameObjectsWithTag ("SolObstacle");
 		lunaObstacles = GameObject.FindGameObjectsWithTag ("LunaObstacle");
-		playerLives = 3;
+		livesTwo = Resources.Load<Sprite> ("Life-full");
+		livesOne = Resources.Load<Sprite> ("Life-half");
+		livesZero = Resources.Load<Sprite> ("Life-dead");
+		lives = GameObject.Find("Lives").GetComponent<Image>();
+		playerLives = 2;
 		loveTokens = 0;
 		storyTokens = 0;
 		setTokenText ();
-		isMusicOn = true;
-		isSoundOn = true;
-		isManualRotationOn = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (playerLives == 0) {
+		if (playerLives == 2) {
+			lives.sprite = livesTwo;
+			Debug.Log ("Two lives");
+		} else if (playerLives == 1) {
+			lives.sprite = livesOne;
+			Debug.Log ("One Life");
+		} else if (playerLives == 0) {
+			lives.sprite = livesZero;
 			loveTokens = 0;
+			Debug.Log ("Dead");
 			restartLevel ();
 		}
+
 		if (solCharacter.GetComponent<CharacterControl> ().hasReachedGoal && lunaCharacter.GetComponent<CharacterControl> ().hasReachedGoal) {
 			SceneManager.LoadScene("cinematic_level1");
 		}
 	}
 
 	public void restartLevel () {
-		SceneManager.LoadScene("LevelOne_Beta");
+		SceneManager.LoadScene("LevelOne_Beta_2");
 	}
 
 	public void SwitchActiveWorld(bool isSolActive)

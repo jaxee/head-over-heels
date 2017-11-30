@@ -2705,9 +2705,9 @@ MonoBehaviour:
   playerLives: 0
   loveTokens: 0
   storyTokens: 0
-  isMusicOn: 0
-  isSoundOn: 0
-  isManualRotationOn: 0
+  isMusicOn: 1
+  isSoundOn: 1
+  isManualRotationOn: 1
 --- !u!4 &862590707
 Transform:
   m_ObjectHideFlags: 0
@@ -6036,6 +6036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelOne: {fileID: 1706598296}
   startLevelOne: {fileID: 0}
+  backToHome: {fileID: 0}
 --- !u!1 &1733884954
 GameObject:
   m_ObjectHideFlags: 0
