@@ -62,7 +62,7 @@ public class CharacterControl : MonoBehaviour {
 	void Update () {
 
 
-		Debug.Log (animator.enabled);
+		//Debug.Log (animator.enabled);
 		if (active) {
 
 			//Debug.Log (jumpCount);
