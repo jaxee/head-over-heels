@@ -71,8 +71,11 @@ public class WorldManagerScript : MonoBehaviour {
 			} else if (playerLives == 0) {
 				lives.sprite = livesZero;
 				loveTokens = 0;
-				Debug.Log ("Dead");
-				restartLevel ();
+				solCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
+				solCharacter.GetComponent<PlayerController> ().isActive = false;
+				lunaCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
+				lunaCharacter.GetComponent<PlayerController> ().isActive = false;
+				Invoke ("Restart", 1);
 			}
 		}
 
@@ -180,5 +183,9 @@ public class WorldManagerScript : MonoBehaviour {
 		} else {
 			isManualRotationOn = true;
 		}
+	}
+
+	public void Restart() {
+		restartLevel ();
 	}
 }

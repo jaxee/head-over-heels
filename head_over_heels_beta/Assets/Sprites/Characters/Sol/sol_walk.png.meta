@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8056a420d44b77149936b747d3c15800
-timeCreated: 1512073818
+guid: 5d8eaee68c702cf4caa4a135decf1bcc
+timeCreated: 1512076012
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,8 @@ TextureImporter:
     21300006: sol_walk_3
     21300008: sol_walk_4
     21300010: sol_walk_5
+    21300012: sol_walk_6
+    21300014: sol_walk_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -158,6 +160,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1115
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 0
+        width: 223
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sol_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1561
         y: 0
         width: 223
         height: 226
