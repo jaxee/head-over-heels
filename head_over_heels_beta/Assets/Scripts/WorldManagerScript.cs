@@ -31,8 +31,8 @@ public class WorldManagerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Screen.SetResolution (600, 800, true);
-
+		Screen.SetResolution (550, 750, false);
+		
 		solCharacter = GameObject.Find ("SolCharacter");
 		lunaCharacter = GameObject.Find ("LunaCharacter");
 		solEnemies = GameObject.FindGameObjectsWithTag ("SolEnemy");
@@ -42,12 +42,15 @@ public class WorldManagerScript : MonoBehaviour {
 		livesTwo = Resources.Load<Sprite> ("Life-full");
 		livesOne = Resources.Load<Sprite> ("Life-half");
 		livesZero = Resources.Load<Sprite> ("Life-dead");
-		lives = GameObject.Find("Lives").GetComponent<Image>();
 		unlockMysteryBox = false;
 		playerLives = 2;
 		loveTokens = 0;
 		storyTokens = 0;
 		setTokenText ();
+
+		if (lives != null) {
+			lives = GameObject.Find("Lives").GetComponent<Image>();
+		}
 	}
 	
 	// Update is called once per frame
@@ -73,8 +76,10 @@ public class WorldManagerScript : MonoBehaviour {
 			Invoke ("Restart", 1);
 		}
 
-		if (solCharacter.GetComponent<PlayerController> ().hasReachedGoal && lunaCharacter.GetComponent<PlayerController> ().hasReachedGoal) {
-			SceneManager.LoadScene("cinematic_level1");
+		if (solCharacter != null || lunaCharacter != null) {
+			if (solCharacter.GetComponent<PlayerController> ().hasReachedGoal && lunaCharacter.GetComponent<PlayerController> ().hasReachedGoal) {
+				SceneManager.LoadScene("cinematic_level1");
+			}
 		}
 	}
 
