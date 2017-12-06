@@ -9,6 +9,22 @@ public class PlayerCollision : MonoBehaviour {
 	private bool flash;
 	public bool solbuttonPressed;
 	public bool lunabuttonPressed;
+	GameObject lunaPillar;
+	GameObject solButton;
+	GameObject solPillar;
+	GameObject lunaButton;
+	GameObject sol;
+	GameObject luna;
+
+	Vector2 solButtonStartPosition;
+	Vector2 solButtonEndPosition;
+	Vector2 lunaPillarStartPosition;
+	Vector2 lunaPillarEndPosition;
+
+	Vector2 lunaButtonStartPosition;
+	Vector2 lunaButtonEndPosition;
+	Vector2 solPillarStartPosition;
+	Vector2 solPillarEndPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +32,30 @@ public class PlayerCollision : MonoBehaviour {
 		flash = true;
 		solbuttonPressed = false;
 		lunabuttonPressed = false;
+	 	lunaPillar = GameObject.Find ("luna_pillar");
+		sol = GameObject.Find ("SolCharacter");
+		luna = GameObject.Find ("LunaCharacter");
+
+
+		solButton = GameObject.Find ("sol_button");
+		solPillar = GameObject.Find ("sol_pillar");
+		lunaButton = GameObject.Find ("luna_button");
+		GetComponent<Renderer> ().enabled = flash;
+		solButtonStartPosition = new Vector2 (solButton.transform.position.x, solButton.transform.position.y );
+		solButtonEndPosition = new Vector2 (solButton.transform.position.x, (-27.37f) );
+		lunaPillarStartPosition = new Vector2 (lunaPillar.transform.position.x, lunaPillar.transform.position.y );
+		lunaPillarEndPosition = new Vector2 (lunaPillar.transform.position.x, (lunaPillar.transform.position.y + 3f) );
+
+		lunaButtonStartPosition = new Vector2 (lunaButton.transform.position.x, lunaButton.transform.position.y );
+		lunaButtonEndPosition = new Vector2 (lunaButton.transform.position.x, (lunaButton.transform.position.y - 0.5f) );
+		solPillarStartPosition = new Vector2 ( solPillar.transform.position.x,  solPillar.transform.position.y );
+		solPillarEndPosition = new Vector2 ( solPillar.transform.position.x, ( solPillar.transform.position.y + 3f) );
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Renderer> ().enabled = flash;
+
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
@@ -34,34 +69,25 @@ public class PlayerCollision : MonoBehaviour {
 			}
 		}
 
+		//Moving Sol button down, and Luna pillar up
 		if (col.gameObject.name == "sol_button" && solbuttonPressed == false) {
 
-			GameObject pillar = GameObject.Find ("luna_pillar");
-			GameObject button = GameObject.Find ("sol_button");
 
-			Vector2 buttonEndPosition = new Vector2 (button.transform.position.x, (button.transform.position.y - 0.5f) );
-
-			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y + 3) );
-			if (solbuttonPressed == false) {	
-				StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
-				StartCoroutine (MoveOverSeconds (button, buttonEndPosition, 1f));
+			if (solbuttonPressed == false) {
+				StartCoroutine (MoveOverSeconds (lunaPillar, lunaPillarEndPosition, 3f));
+				StartCoroutine (MoveOverSeconds (solButton, solButtonEndPosition, 1f));
 
 			}
+
 			solbuttonPressed = true;
 
-
-
 		}
-		if (col.gameObject.name != "sol_button" && solbuttonPressed == true) {
-			GameObject pillar = GameObject.Find ("luna_pillar");
-			GameObject button = GameObject.Find ("sol_button");
-
-			Vector2 buttonEndPosition = new Vector2 (button.transform.position.x, (button.transform.position.y + 0.5f) );
-
-			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y - 3) );
+		//Else - Moving Sol button back up, and Luna pillar back down
+		if ( col.gameObject.name != "sol_button" && solbuttonPressed == true) {
+	
 			if (solbuttonPressed == true) {	
-				StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
-				StartCoroutine (MoveOverSeconds (button, buttonEndPosition, 1f));
+				StartCoroutine (MoveOverSeconds (lunaPillar, lunaPillarStartPosition, 3f));
+				StartCoroutine (MoveOverSeconds (solButton, solButtonStartPosition, 1f));
 
 			}
 			solbuttonPressed = false;
@@ -70,15 +96,10 @@ public class PlayerCollision : MonoBehaviour {
 
 		if (col.gameObject.name == "luna_button"  && lunabuttonPressed == false) {
 
-			GameObject pillar = GameObject.Find ("sol_pillar");
-			GameObject button = GameObject.Find ("luna_button");
-			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y + 3) );
-			Vector2 buttonEndPosition = new Vector2 (button.transform.position.x, (button.transform.position.y - 0.5f) );
 
 			if (lunabuttonPressed == false) {
-				StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
-				StartCoroutine (MoveOverSeconds (button, buttonEndPosition, 1f));
-
+				StartCoroutine (MoveOverSeconds (solPillar, solPillarEndPosition, 3f));
+				StartCoroutine (MoveOverSeconds (lunaButton, lunaButtonEndPosition, 1f));
 			}
 			lunabuttonPressed = true;
 
@@ -87,15 +108,10 @@ public class PlayerCollision : MonoBehaviour {
 
 		if (col.gameObject.name != "luna_button" && lunabuttonPressed == true) {
 
-			GameObject pillar = GameObject.Find ("sol_pillar");
-			GameObject button = GameObject.Find ("luna_button");
 
-			Vector2 buttonEndPosition = new Vector2 (button.transform.position.x, (button.transform.position.y + 0.5f) );
-
-			Vector2 endPosition = new Vector2 (pillar.transform.position.x, (pillar.transform.position.y - 3) );
-			if (lunabuttonPressed == true) {	
-				StartCoroutine (MoveOverSeconds (pillar, endPosition, 3f));
-				StartCoroutine (MoveOverSeconds (button, buttonEndPosition, 1f));
+			if (lunabuttonPressed == true) {
+				StartCoroutine (MoveOverSeconds (solPillar, solPillarStartPosition, 3f));
+				StartCoroutine (MoveOverSeconds (lunaButton, lunaButtonStartPosition, 1f));
 
 			}
 			lunabuttonPressed = false;
