@@ -25,5 +25,7 @@ public class EnemyDamaged : MonoBehaviour {
 				Destroy(gameObject);
 			}
 		}
+
+
 	}
 }
