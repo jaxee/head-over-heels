@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class WorldManagerScript : MonoBehaviour {
 
 	public GameObject solCharacter;
@@ -11,8 +12,7 @@ public class WorldManagerScript : MonoBehaviour {
 	public Text loooveTokens;
 	public Text storyTokensText;
 	public Image lives;
-	public Image mysteryBox;
-	public Sprite mysteryBoxUnlocked;
+
 	public static GameObject[] solEnemies;
 	public static GameObject[] lunaEnemies;
 	public static GameObject[] solObstacles;
@@ -28,6 +28,8 @@ public class WorldManagerScript : MonoBehaviour {
 	private Sprite livesTwo;
 	private Sprite livesOne;
 	private Sprite livesZero;
+	private Image mysteryBox;
+	private Sprite mysteryBoxUnlocked;
 
 	// Use this for initialization
 	void Start () {
@@ -48,23 +50,32 @@ public class WorldManagerScript : MonoBehaviour {
 		storyTokens = 0;
 		setTokenText ();
 
-		if (lives != null) {
+
+
+
+
+		//if (lives != null) {
 			lives = GameObject.Find("Lives").GetComponent<Image>();
-		}
+		//}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (storyTokens == 1) {
+		storyTokens = PlayerPrefs.GetInt ("StoryboardTokens");
+		Scene scene = SceneManager.GetActiveScene();
+		if (storyTokens == 1 && scene.name == "interface") {
+			mysteryBoxUnlocked = Resources.Load<Sprite> ("MysteryBox");
+			mysteryBox = GameObject.Find("StoryBox_One").GetComponent<Image>();
+			//Debug.Log ("Howdy");
 			unlockMysteryBox = true;
-			//mysteryBox.sprite = mysteryBoxUnlocked;
+			mysteryBox.sprite = mysteryBoxUnlocked;
 		}
-		if (playerLives == 2) {
+		if (playerLives == 2 && scene.name == "LevelOne_Beta_2") {
 			lives.sprite = livesTwo;
-		} else if (playerLives == 1) {
+		} else if (playerLives == 1 && scene.name == "LevelOne_Beta_2") {
 			lives.sprite = livesOne;
-		} else if (playerLives == 0) {
+		} else if (playerLives == 0 && scene.name == "LevelOne_Beta_2") {
 			lives.sprite = livesZero;
 			loveTokens = 0;
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.speed = 1;
@@ -150,11 +161,13 @@ public class WorldManagerScript : MonoBehaviour {
 	}
 
 	public void setTokenText() {
-		loooveTokens.text = loveTokens.ToString ();
+		loooveTokens.text = PlayerPrefs.GetInt("LoveTokens").ToString ();
+
 	}
 
 	public void setStoryTokenText() {
-		storyTokensText.text = storyTokens.ToString ();
+		
+		//storyTokensText.text = storyTokens.ToString ();
 
 	}
 

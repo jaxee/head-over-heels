@@ -121,12 +121,14 @@ public class PlayerCollision : MonoBehaviour {
 		} else if (col.gameObject.tag == "LoveToken") {
 			Destroy (col.gameObject);
 			worldManager.loveTokens++;
+			PlayerPrefs.SetInt("LoveTokens", worldManager.loveTokens);
 			worldManager.setTokenText ();
 		}
 		else if (col.gameObject.tag == "StoryToken") {
 			Destroy (col.gameObject);
 			worldManager.storyTokens++;
-			worldManager.setTokenText ();
+			PlayerPrefs.SetInt("StoryboardTokens", 1);
+			worldManager.setStoryTokenText ();
 		}
 		else if (col.gameObject.tag == "Pit") {
 			Destroy (col.gameObject);
