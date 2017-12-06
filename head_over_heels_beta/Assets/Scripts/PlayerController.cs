@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public bool moveRight = true;
 	public bool shouldMove = true;
 	private int direction = 1;
+	bool blocked = false;
 
 	// Jumping
 	bool grounded = false;
@@ -45,13 +46,8 @@ public class PlayerController : MonoBehaviour {
 
 		if (isActive) {
 
-			if (Input.GetKeyDown (KeyCode.L) && !isTackling) {
-				isTackling = true;
-				speed = 2.5f;
-			}
-
-			if (grounded && Input.GetAxis ("Jump") > 0) {
-				playerAnimator.enabled = false;
+			if (grounded && Input.GetAxis ("Jump") > 0 && !isTackling) {
+				PauseAnimation();
 				playerRigidBody.velocity = new Vector2 (playerRigidBody.velocity.x, 0f);
 				playerRigidBody.AddForce (new Vector2 (0f, jumpPower), ForceMode2D.Impulse);
 				grounded = false;
@@ -59,25 +55,32 @@ public class PlayerController : MonoBehaviour {
 
 			grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
 
-			if (grounded && !playerAnimator.enabled) {
-				playerAnimator.enabled = true;
+			if (Input.GetKeyDown (KeyCode.L) && !isTackling && grounded && blocked) {
+				isTackling = true;
+				speed = maxSpeed;
+			}
+
+			if (grounded && playerAnimator.speed == 0) {
+				UnpauseAnimation();
 			}
 				
 			float move = Input.GetAxis ("Horizontal");
 
-			if (move > 0 && !moveRight) {
-				Flip ();
-			} else if (move < 0 && moveRight) {
-				Flip ();
-			} else if (move != 0 && !shouldMove) {
-				shouldMove = true;
-				speed = maxSpeed;
+			if (!isTackling) {
+				if (move > 0 && !moveRight) {
+					Flip ();
+				} else if (move < 0 && moveRight) {
+					Flip ();
+				} else if (move != 0 && !shouldMove && !blocked) {
+					shouldMove = true;
+					speed = maxSpeed;
+				}
 			}
 
 			direction = moveRight ? 1 : -1;
 
 			// Eventually will need touch input, or we make a new input mapping
-			if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			if (Input.GetKeyDown (KeyCode.UpArrow) && !blocked && !isTackling) {
 				shouldMove = !shouldMove;
 
 				if (shouldMove) {
@@ -113,7 +116,9 @@ public class PlayerController : MonoBehaviour {
 
 	void Flip() {
 		moveRight = !moveRight;
-		playerRenderer.flipX = !playerRenderer.flipX;
+		//playerRenderer.flipX = !playerRenderer.flipX;
+		float playerScale = transform.localScale.x;
+		transform.localScale = new Vector3 (playerScale * -1, 1, 1);
 
 		if (!shouldMove) {
 			shouldMove = true;
@@ -127,21 +132,15 @@ public class PlayerController : MonoBehaviour {
 		if (((groundLayer & 1 << collider.gameObject.layer) == 1 << collider.gameObject.layer) && !isTackling) {
 			shouldMove = false;
 			speed = 0;
-			playerRigidBody.velocity = new Vector2(0, 0);
-			//playerRigidBody.AddForce(new Vector2(1000 * (-1f * direction), 0));
-			//Flip ();
+			playerRigidBody.velocity = Vector2.zero;
+			playerRigidBody.angularVelocity = 0f;
+			blocked = true;
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D collider) {
-
-		// Prevents sticking onto objects. Don't perform when tackling.
+	void OnTriggerExit2D(Collider2D collider) {
 		if (((groundLayer & 1 << collider.gameObject.layer) == 1 << collider.gameObject.layer) && !isTackling) {
-			shouldMove = false;
-			speed = 0;
-			playerRigidBody.velocity = new Vector2(0, 0);
-			//playerRigidBody.AddForce(new Vector2(1000 * (-1f * direction), 0));
-			//Flip ();
+			blocked = false;
 		}
 	}
 
@@ -152,8 +151,15 @@ public class PlayerController : MonoBehaviour {
 		// Stop Tackle animation
 		playerAnimator.SetBool ("ShouldTackle", isTackling);
 
-		if (!shouldMove) {
-			speed = 0;
-		}
+		speed = 0;
+		shouldMove = false;
+	}
+
+	void PauseAnimation() {
+		playerAnimator.speed = 0;
+	}
+
+	void UnpauseAnimation() {
+		playerAnimator.speed = 1.0f;
 	}
 }

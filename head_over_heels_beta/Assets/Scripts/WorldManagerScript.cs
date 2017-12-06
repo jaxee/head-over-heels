@@ -64,8 +64,10 @@ public class WorldManagerScript : MonoBehaviour {
 		} else if (playerLives == 0) {
 			lives.sprite = livesZero;
 			loveTokens = 0;
+			solCharacter.GetComponent<PlayerController> ().playerAnimator.speed = 1;
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
 			solCharacter.GetComponent<PlayerController> ().isActive = false;
+			lunaCharacter.GetComponent<PlayerController> ().playerAnimator.speed = 1;
 			lunaCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
 			lunaCharacter.GetComponent<PlayerController> ().isActive = false;
 			Invoke ("Restart", 1);

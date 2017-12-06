@@ -13,6 +13,7 @@ public class FollowPlayer : MonoBehaviour {
 	private float verticalOffset;
 	private float horizontalPosition;
 	private float verticalPosition;
+	private Vector2 startPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class FollowPlayer : MonoBehaviour {
 		playerController = player.GetComponent<PlayerController> ();
 		horizontalPosition = transform.position.x;
 		verticalPosition = player.transform.position.y + verticalOffset;
+		startPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +35,7 @@ public class FollowPlayer : MonoBehaviour {
 		}
 
 		// Falling down
-		if (playerController.playerRigidBody.velocity.y < 0) {
+		if (playerController.playerRigidBody.velocity.y < 0 && transform.position.y > (startPosition.y)) {
 			if (Mathf.Abs (player.transform.position.y - verticalPosition) > maxVerticalDistance) {
 				verticalPosition = player.transform.position.y + maxVerticalDistance;
 			}

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollision : MonoBehaviour {
+public class PlayerCollision : MonoBehaviour {
 
 	public WorldManagerScript worldManager;
 	private bool invincible;
 	private bool flash;
-	private Rigidbody2D rigidbody;
 	public bool solbuttonPressed;
 	public bool lunabuttonPressed;
 
@@ -33,16 +32,6 @@ public class EnemyCollision : MonoBehaviour {
 				Invoke ("resetInvulnerability", 2);
 				InvokeRepeating ("hitEffect", 0, 0.25f);
 			}
-		}
-
-		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
-			//If tackling, also get tackle force
-			/* Remove for now due to bugs
-			if (GetComponent<Animator> ().GetBool ("Tackle")) {
-				Rigidbody2D rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
-				rigidbody.bodyType = RigidbodyType2D.Dynamic;
-			}
-			*/
 		}
 
 		if (col.gameObject.name == "sol_button" && solbuttonPressed == false) {
@@ -118,56 +107,35 @@ public class EnemyCollision : MonoBehaviour {
 	{
 		if (!invincible) {
 			if (col.gameObject.tag.Contains ("Obstacle") || col.gameObject.tag.Contains ("Enemy")) {
-				Debug.Log ("hit");
 				invincible = true;
 				worldManager.playerLives--;
 				Invoke ("resetInvulnerability", 2);
 				InvokeRepeating ("hitEffect", 0, 0.25f);
 			}
 		}
-
-		if (col.gameObject.name.Contains("box") || col.gameObject.name.Contains("Box")) {
-			// If tackling
-			/* Remove for now due to bugs
-			if (GetComponent<Animator> ().GetBool ("Tackle")) {
-				rigidbody = col.gameObject.GetComponent<Rigidbody2D> ();
-				rigidbody.bodyType = RigidbodyType2D.Dynamic;
-				Invoke ("stopMovingBox", 1.0f);
-			}
-			*/
-		}
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Goal") {
-			GetComponent<CharacterControl> ().hasReachedGoal = true;
-			Debug.Log ("Goal reached");
+			GetComponent<PlayerController> ().hasReachedGoal = true;
 		} else if (col.gameObject.tag == "LoveToken") {
 			Destroy (col.gameObject);
 			worldManager.loveTokens++;
 			worldManager.setTokenText ();
-			Debug.Log ("Loooooove Token, Baby");
-			Debug.Log (worldManager.loveTokens);
 		}
 		else if (col.gameObject.tag == "StoryToken") {
 			Destroy (col.gameObject);
 			worldManager.storyTokens++;
 			worldManager.setTokenText ();
-			Debug.Log ("Story Token, Baby");
-			Debug.Log (worldManager.storyTokens);
 		}
 		else if (col.gameObject.tag == "Pit") {
 			Destroy (col.gameObject);
-			Debug.Log ("Falling into the pit");
 			worldManager.playerLives = 0;
 
 		}
 
 	}
-
-
-
-
+		
 	public IEnumerator MoveOverSeconds (GameObject objectToMove, Vector3 end, float seconds)
 	{
 		float elapsedTime = 0;
@@ -191,12 +159,6 @@ public class EnemyCollision : MonoBehaviour {
 	void hitEffect()
 	{
 		flash = !flash;
-	}
-
-	void stopMovingBox()
-	{
-		rigidbody.bodyType = RigidbodyType2D.Static;
-		GetComponent<CharacterControl> ().forwardForce = 10;
 	}
 
 }
