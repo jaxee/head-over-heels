@@ -23,7 +23,7 @@ GameObject:
   m_Layer: 0
   m_Name: pit
   m_TagString: Pit
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1853864860536562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.43, y: -63.27, z: -2.6819646}
+  m_LocalPosition: {x: 26.14, y: -30.695038, z: -2.6819646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,5 +63,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6934319, y: 1.5912399}
+  m_Size: {x: 15.82, y: 1.5912399}
   m_EdgeRadius: 0

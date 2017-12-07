@@ -66,11 +66,11 @@ public class WorldManagerScript : MonoBehaviour {
 			unlockMysteryBox = true;
 			mysteryBox.sprite = mysteryBoxUnlocked;
 		}
-		if (playerLives == 2 && scene.name == "LevelOne_Beta_2") {
+		if (playerLives == 2 && scene.name == "LevelOne_FINAL") {
 			lives.sprite = livesTwo;
-		} else if (playerLives == 1 && scene.name == "LevelOne_Beta_2") {
+		} else if (playerLives == 1 && scene.name == "LevelOne_FINAL") {
 			lives.sprite = livesOne;
-		} else if (playerLives == 0 && scene.name == "LevelOne_Beta_2") {
+		} else if (playerLives == 0 && scene.name == "LevelOne_FINAL") {
 			lives.sprite = livesZero;
 			loveTokens = 0;
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.speed = 1;
@@ -90,7 +90,7 @@ public class WorldManagerScript : MonoBehaviour {
 	}
 
 	public void restartLevel () {
-		SceneManager.LoadScene("LevelOne_Beta_2");
+		SceneManager.LoadScene("LevelOne_FINAL");
 	}
 
 	public void SwitchActiveWorld(bool isSolActive)
