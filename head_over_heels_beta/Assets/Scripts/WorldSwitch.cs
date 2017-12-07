@@ -5,6 +5,7 @@ using UnityEngine;
 public class WorldSwitch : MonoBehaviour {
 
 	private bool shouldRotate;
+	AudioSource buttonSound;
 	private bool shouldSlide;
 	private bool switching;
 	public GameObject worldPivot;
@@ -74,6 +75,9 @@ public class WorldSwitch : MonoBehaviour {
 
 	public void OnClick()
 	{
+		buttonSound = gameObject.GetComponent<AudioSource> ();
+		//buttonSound.Play ();
+
 		if (!switching) {
 			shouldRotate = !shouldRotate;
 		}
