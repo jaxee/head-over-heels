@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4507853971132772}
   - component: {fileID: 212891618520239568}
   - component: {fileID: 68269906571505716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sol_spikes
   m_TagString: SolObstacle
   m_Icon: {fileID: 0}

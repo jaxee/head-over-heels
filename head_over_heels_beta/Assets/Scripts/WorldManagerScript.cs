@@ -50,10 +50,6 @@ public class WorldManagerScript : MonoBehaviour {
 		storyTokens = 0;
 		setTokenText ();
 
-
-
-
-
 		//if (lives != null) {
 			lives = GameObject.Find("Lives").GetComponent<Image>();
 		//}
@@ -67,7 +63,6 @@ public class WorldManagerScript : MonoBehaviour {
 		if (storyTokens == 1 && scene.name == "interface") {
 			mysteryBoxUnlocked = Resources.Load<Sprite> ("MysteryBox");
 			mysteryBox = GameObject.Find("StoryBox_One").GetComponent<Image>();
-			//Debug.Log ("Howdy");
 			unlockMysteryBox = true;
 			mysteryBox.sprite = mysteryBoxUnlocked;
 		}

@@ -24,6 +24,8 @@ public class EnemyMovement : MonoBehaviour
 	//Unsure
 	private float speedStorage = 0;
 
+	SpriteRenderer enemyRenderer;
+
 	// Initialization
 	void Start() 
 	{
@@ -32,6 +34,11 @@ public class EnemyMovement : MonoBehaviour
 			currentWaypoint = waypoints[0];
 
 		}
+
+		if (GetComponent<SpriteRenderer> ()) {
+			enemyRenderer = GetComponent<SpriteRenderer> ();
+		}
+
 	}
 	
 	void Update() 
@@ -118,6 +125,7 @@ public class EnemyMovement : MonoBehaviour
 			if ((!inReverse && currentIndex + 1 >= waypoints.Length) || (inReverse && currentIndex == 0)) 
 			{
 				inReverse = !inReverse;
+				Flip ();
 			}
 
 			currentIndex = (!inReverse) ? currentIndex + 1 : currentIndex - 1;
@@ -126,5 +134,10 @@ public class EnemyMovement : MonoBehaviour
 		currentWaypoint = waypoints[currentIndex];
 	}
 
-
+	void Flip() {
+		if (enemyRenderer) {
+			enemyRenderer.flipX = !enemyRenderer.flipX;
+		}
+	}
+		
 }
