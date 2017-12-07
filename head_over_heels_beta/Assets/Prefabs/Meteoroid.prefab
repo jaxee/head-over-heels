@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114270621550564148}
   - component: {fileID: 95587740647124036}
   m_Layer: 0
-  m_Name: Meteoroid 1
+  m_Name: Meteoroid
   m_TagString: SolEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
