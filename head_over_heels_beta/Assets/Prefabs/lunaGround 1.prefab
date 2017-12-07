@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212029212638509728}
   - component: {fileID: 61443157664438136}
   m_Layer: 8
-  m_Name: lunaGround
+  m_Name: lunaGround 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
