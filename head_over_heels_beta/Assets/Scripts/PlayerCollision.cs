@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour {
 	AudioSource audioLoveToken;
 	AudioSource audioStoryToken;
 	AudioSource audioBox;
+	AudioSource audioGoal;
 
 	Vector2 solButtonStartPosition;
 	Vector2 solButtonEndPosition;
@@ -29,6 +30,7 @@ public class PlayerCollision : MonoBehaviour {
 	Vector2 lunaButtonEndPosition;
 	Vector2 solPillarStartPosition;
 	Vector2 solPillarEndPosition;
+	//AudioSource switchSound;
 
 	// Use this for initialization
 	void Start () {
@@ -78,6 +80,8 @@ public class PlayerCollision : MonoBehaviour {
 		//Moving Sol button down, and Luna pillar up
 		if (col.gameObject.name == "sol_button" && solbuttonPressed == false) {
 
+			//switchSound = GameObject.Find ("directionSound").GetComponent<AudioSource> ();
+			//switchSound.Play ();
 
 			if (solbuttonPressed == false) {
 				StartCoroutine (MoveOverSeconds (lunaPillar, lunaPillarEndPosition, 3f));
@@ -139,7 +143,12 @@ public class PlayerCollision : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Goal") {
+			audioGoal = col.gameObject.GetComponent<AudioSource> ();
+			audioGoal.Play ();
+
 			GetComponent<PlayerController> ().hasReachedGoal = true;
+
+
 		} else if (col.gameObject.tag == "LoveToken") {
 			audioLoveToken = col.gameObject.GetComponent<AudioSource> ();
 			audioLoveToken.Play ();
@@ -166,7 +175,7 @@ public class PlayerCollision : MonoBehaviour {
 			//Destroy(col.gameObject, audioBox.clip.length);
 
 		} else {
-			audioBox.Stop ();
+			//audioBox.Stop ();
 		}
 
 	}
