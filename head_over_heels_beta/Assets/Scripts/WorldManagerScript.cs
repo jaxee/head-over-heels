@@ -24,7 +24,8 @@ public class WorldManagerScript : MonoBehaviour {
 	public bool isMusicOn;
 	public bool isSoundOn;
 	public bool isManualRotationOn;
-
+	AudioSource dyingSound;
+	AudioSource audioMenu;
 	private Sprite livesTwo;
 	private Sprite livesOne;
 	private Sprite livesZero;
@@ -67,12 +68,18 @@ public class WorldManagerScript : MonoBehaviour {
 			mysteryBox.sprite = mysteryBoxUnlocked;
 		}
 		if (playerLives == 2 && scene.name == "LevelOne_FINAL") {
+
 			lives.sprite = livesTwo;
 		} else if (playerLives == 1 && scene.name == "LevelOne_FINAL") {
+			
 			lives.sprite = livesOne;
 		} else if (playerLives == 0 && scene.name == "LevelOne_FINAL") {
 			lives.sprite = livesZero;
 			loveTokens = 0;
+			storyTokens = 0;
+			dyingSound = solCharacter.GetComponent<AudioSource> ();
+			dyingSound.Play ();
+
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.speed = 1;
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
 			solCharacter.GetComponent<PlayerController> ().isActive = false;
@@ -148,7 +155,11 @@ public class WorldManagerScript : MonoBehaviour {
 	}
 
 	public void PauseGame() {
+		audioMenu = GameObject.Find ("menuSound").GetComponent<AudioSource> ();
+		audioMenu.Play ();
+
 		Time.timeScale = 0.0f;
+	
 	}
 
 	public void UnpauseGame() {

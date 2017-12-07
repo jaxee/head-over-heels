@@ -9,6 +9,7 @@ public class ManageScenes : MonoBehaviour {
 	public Button levelOne;
 	public Button startLevelOne;
 	public Button backToHome;
+	public Button goToHome;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,10 @@ public class ManageScenes : MonoBehaviour {
 
 		if (backToHome != null) {
 			backToHome.onClick.AddListener(ReturnToHome);
+		}
+
+		if (goToHome != null) {
+			goToHome.onClick.AddListener(GoToHome);
 		}
 	}
 	
@@ -37,6 +42,12 @@ public class ManageScenes : MonoBehaviour {
 
 	void ReturnToHome () {
 		Debug.Log ("Return to home screen!");
+		SceneManager.LoadScene ("interface", LoadSceneMode.Single);
+	}
+
+	void GoToHome () {
+		Debug.Log ("Go to home screen!");
+		PlayerPrefs.DeleteAll();
 		SceneManager.LoadScene ("interface", LoadSceneMode.Single);
 	}
 }

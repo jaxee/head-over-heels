@@ -15,10 +15,10 @@ public class PlayerCollision : MonoBehaviour {
 	AudioSource audioLoveToken;
 	AudioSource audioStoryToken;
 	AudioSource audioBox;
+	AudioSource audioGoal;
 
 	Vector3 startingPillarPosition;
 	Vector3 startingButtonPosition;
-
 
 	// Use this for initialization
 	void Start () {
@@ -93,7 +93,12 @@ void OnCollisionExit2D (Collision2D col) {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Goal") {
+			audioGoal = col.gameObject.GetComponent<AudioSource> ();
+			audioGoal.Play ();
+
 			GetComponent<PlayerController> ().hasReachedGoal = true;
+
+
 		} else if (col.gameObject.tag == "LoveToken") {
 			audioLoveToken = col.gameObject.GetComponent<AudioSource> ();
 			audioLoveToken.Play ();
@@ -120,7 +125,7 @@ void OnCollisionExit2D (Collision2D col) {
 			//Destroy(col.gameObject, audioBox.clip.length);
 
 		} else {
-			audioBox.Stop ();
+			//audioBox.Stop ();
 		}
 
 	}

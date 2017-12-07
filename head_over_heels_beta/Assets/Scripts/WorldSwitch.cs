@@ -75,8 +75,9 @@ public class WorldSwitch : MonoBehaviour {
 
 	public void OnClick()
 	{
+		Debug.Log ("Play");
 		buttonSound = gameObject.GetComponent<AudioSource> ();
-		//buttonSound.Play ();
+		buttonSound.Play ();
 
 		if (!switching) {
 			shouldRotate = !shouldRotate;

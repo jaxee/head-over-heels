@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour {
 	private int direction = 1;
 	bool blocked = false;
 	bool onPlatform = false;
-
+	AudioSource audioJump;
+	AudioSource audioDirection;
+	 
 	// Jumping
 	bool grounded = false;
 	float groundCheckRadius = 0.2f;
@@ -48,6 +50,10 @@ public class PlayerController : MonoBehaviour {
 		if (isActive) {
 
 			if (grounded && Input.GetAxis ("Jump") > 0 && !isTackling) {
+
+
+				audioJump = GameObject.Find ("jumpSound").GetComponent<AudioSource> ();
+				audioJump.Play ();
 				PauseAnimation();
 				playerRigidBody.velocity = new Vector2 (playerRigidBody.velocity.x, 0f);
 				playerRigidBody.AddForce (new Vector2 (0f, jumpPower), ForceMode2D.Impulse);
@@ -69,8 +75,13 @@ public class PlayerController : MonoBehaviour {
 
 			if (!isTackling) {
 				if (move > 0 && !moveRight) {
+
+					audioDirection = GameObject.Find ("directionSound").GetComponent<AudioSource> ();
+					audioDirection.Play ();
 					Flip ();
 				} else if (move < 0 && moveRight) {
+					audioDirection = GameObject.Find ("directionSound").GetComponent<AudioSource> ();
+					audioDirection.Play ();
 					Flip ();
 				} else if (move != 0 && !shouldMove && (!blocked || onPlatform)) {
 					shouldMove = true;
@@ -82,6 +93,7 @@ public class PlayerController : MonoBehaviour {
 
 			// Eventually will need touch input, or we make a new input mapping
 			if (Input.GetKeyDown (KeyCode.UpArrow) && (!blocked || onPlatform) && !isTackling) {
+
 				shouldMove = !shouldMove;
 
 				if (shouldMove) {
