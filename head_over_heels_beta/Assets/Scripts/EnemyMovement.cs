@@ -64,7 +64,7 @@ public class EnemyMovement : MonoBehaviour
 			direction.Normalize ();
 
 			if (moveHorizontally) {
-				direction.y = 0;
+				//direction.y = 0;
 			}
 
 			//Scale movement depending on direction, don't translate in z
