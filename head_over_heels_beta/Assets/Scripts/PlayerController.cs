@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public bool shouldMove = true;
 	private int direction = 1;
 	bool blocked = false;
+	bool onPlatform = false;
 
 	// Jumping
 	bool grounded = false;
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour {
 					Flip ();
 				} else if (move < 0 && moveRight) {
 					Flip ();
-				} else if (move != 0 && !shouldMove && !blocked) {
+				} else if (move != 0 && !shouldMove && (!blocked || onPlatform)) {
 					shouldMove = true;
 					speed = maxSpeed;
 				}
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour {
 			direction = moveRight ? 1 : -1;
 
 			// Eventually will need touch input, or we make a new input mapping
-			if (Input.GetKeyDown (KeyCode.UpArrow) && !blocked && !isTackling) {
+			if (Input.GetKeyDown (KeyCode.UpArrow) && (!blocked || onPlatform) && !isTackling) {
 				shouldMove = !shouldMove;
 
 				if (shouldMove) {
@@ -128,6 +129,10 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 
+		if (collider.gameObject.tag == "MovingPlatform") {
+			transform.parent = collider.transform;
+			onPlatform = true;
+		}
 		// Prevents sticking onto objects. Don't perform when tackling.
 		if (((groundLayer & 1 << collider.gameObject.layer) == 1 << collider.gameObject.layer) && !isTackling) {
 			shouldMove = false;
@@ -141,6 +146,11 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D collider) {
 		if (((groundLayer & 1 << collider.gameObject.layer) == 1 << collider.gameObject.layer) && !isTackling) {
 			blocked = false;
+		}
+
+		if (collider.gameObject.tag == "MovingPlatform") {
+			transform.parent = null;
+			onPlatform = false;
 		}
 	}
 
