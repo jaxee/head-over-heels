@@ -16,15 +16,19 @@ public class PlayerCollision : MonoBehaviour {
 	GameObject sol;
 	GameObject luna;
 
+	AudioSource audioLoveToken;
+	AudioSource audioStoryToken;
+	AudioSource audioBox;
+
 	Vector2 solButtonStartPosition;
 	Vector2 solButtonEndPosition;
 	Vector2 lunaPillarStartPosition;
 	Vector2 lunaPillarEndPosition;
 
-	private Vector2 lunaButtonStartPosition;
-	private Vector2 lunaButtonEndPosition;
-	private Vector2 solPillarStartPosition;
-	private Vector2 solPillarEndPosition;
+	Vector2 lunaButtonStartPosition;
+	Vector2 lunaButtonEndPosition;
+	Vector2 solPillarStartPosition;
+	Vector2 solPillarEndPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -37,9 +41,12 @@ public class PlayerCollision : MonoBehaviour {
 		luna = GameObject.Find ("LunaCharacter");
 
 
+
+
 		solButton = GameObject.Find ("sol_button");
 		solPillar = GameObject.Find ("sol_pillar");
 		lunaButton = GameObject.Find ("luna_button");
+		GetComponent<Renderer> ().enabled = flash;
 		solButtonStartPosition = new Vector2 (solButton.transform.position.x, solButton.transform.position.y );
 		solButtonEndPosition = new Vector2 (solButton.transform.position.x, (-27.37f) );
 		lunaPillarStartPosition = new Vector2 (lunaPillar.transform.position.x, lunaPillar.transform.position.y );
@@ -54,9 +61,7 @@ public class PlayerCollision : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (invincible) {
-			GetComponent<Renderer> ().enabled = flash;
-		}
+
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
@@ -136,21 +141,32 @@ public class PlayerCollision : MonoBehaviour {
 		if (col.gameObject.tag == "Goal") {
 			GetComponent<PlayerController> ().hasReachedGoal = true;
 		} else if (col.gameObject.tag == "LoveToken") {
-			Destroy (col.gameObject);
+			audioLoveToken = col.gameObject.GetComponent<AudioSource> ();
+			audioLoveToken.Play ();
+			col.gameObject.GetComponent<Renderer> ().enabled = false;
+			Destroy (col.gameObject, audioLoveToken.clip.length);
 			worldManager.loveTokens++;
-			PlayerPrefs.SetInt("LoveTokens", worldManager.loveTokens);
+			PlayerPrefs.SetInt ("LoveTokens", worldManager.loveTokens);
 			worldManager.setTokenText ();
-		}
-		else if (col.gameObject.tag == "StoryToken") {
-			Destroy (col.gameObject);
+		} else if (col.gameObject.tag == "StoryToken") {
+			audioStoryToken = col.gameObject.GetComponent<AudioSource> ();
+			audioStoryToken.Play ();
+			col.gameObject.GetComponent<Renderer> ().enabled = false;
+			Destroy (col.gameObject, audioStoryToken.clip.length);
 			worldManager.storyTokens++;
-			PlayerPrefs.SetInt("StoryboardTokens", 1);
+			PlayerPrefs.SetInt ("StoryboardTokens", 1);
 			worldManager.setStoryTokenText ();
-		}
-		else if (col.gameObject.tag == "Pit") {
+		} else if (col.gameObject.tag == "Pit") {
 			Destroy (col.gameObject);
 			worldManager.playerLives = 0;
 
+		} else if (col.gameObject.tag == "Box") {
+			audioBox = col.gameObject.GetComponent<AudioSource> ();
+			audioBox.Play ();
+			//Destroy(col.gameObject, audioBox.clip.length);
+
+		} else {
+			audioBox.Stop ();
 		}
 
 	}
@@ -173,7 +189,6 @@ public class PlayerCollision : MonoBehaviour {
 		invincible = false;
 		CancelInvoke ();
 		flash = true;
-		GetComponent<Renderer>().enabled = true;
 	}
 
 	void hitEffect()
