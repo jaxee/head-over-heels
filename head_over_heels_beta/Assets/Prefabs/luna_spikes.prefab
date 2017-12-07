@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4047992386485194}
   - component: {fileID: 212460708296220540}
   - component: {fileID: 68741598143109610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: luna_spikes
-  m_TagString: SolObstacle
+  m_TagString: LunaObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,11 +56,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -11.333342, y: 0}
-  - {x: -9.137476, y: 8.049371}
-  - {x: 0.05430954, y: 9.365324}
-  - {x: 2.577409, y: 12.305861}
-  - {x: 10.776439, y: 11.9964075}
+  - {x: -9.923838, y: -1.6263463}
+  - {x: -8.378477, y: 7.3988233}
+  - {x: -4.607885, y: 9.256924}
+  - {x: 2.577409, y: 11.763757}
+  - {x: 9.453572, y: 9.233961}
+  - {x: 10.675704, y: -2.907439}
 --- !u!212 &212460708296220540
 SpriteRenderer:
   m_ObjectHideFlags: 1

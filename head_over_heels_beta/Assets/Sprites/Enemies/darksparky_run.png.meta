@@ -1,20 +1,21 @@
 fileFormatVersion: 2
-guid: 9939eec9e5b9d43fe8a620c4980e3afb
-timeCreated: 1512609514
+guid: c59fccc2542c948cd8b69350b280854d
+timeCreated: 1512625212
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SparkyDark_0
-    21300002: SparkyDark_1
-    21300004: SparkyDark_2
-    21300006: SparkyDark_3
-    21300008: SparkyDark_4
-    21300010: SparkyDark_5
-    21300012: SparkyDark_6
-    21300014: SparkyDark_7
-    21300016: SparkyDark_8
-    21300018: SparkyDark_9
-    21300020: SparkyDark_10
+    21300000: darksparky_run_0
+    21300002: darksparky_run_1
+    21300004: darksparky_run_2
+    21300006: darksparky_run_3
+    21300008: darksparky_run_4
+    21300010: darksparky_run_5
+    21300012: darksparky_run_6
+    21300014: darksparky_run_7
+    21300016: darksparky_run_8
+    21300018: darksparky_run_9
+    21300020: darksparky_run_10
+    21300022: darksparky_run_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -89,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SparkyDark_0
+      name: darksparky_run_0
       rect:
         serializedVersion: 2
         x: 632
@@ -97,13 +98,13 @@ TextureImporter:
         width: 643
         height: 680
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_1
+      name: darksparky_run_1
       rect:
         serializedVersion: 2
         x: 1341
@@ -111,13 +112,13 @@ TextureImporter:
         width: 644
         height: 663
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_2
+      name: darksparky_run_2
       rect:
         serializedVersion: 2
         x: 2036
@@ -125,13 +126,13 @@ TextureImporter:
         width: 643
         height: 654
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_3
+      name: darksparky_run_3
       rect:
         serializedVersion: 2
         x: 2743
@@ -139,13 +140,13 @@ TextureImporter:
         width: 642
         height: 664
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_4
+      name: darksparky_run_4
       rect:
         serializedVersion: 2
         x: 3406
@@ -153,13 +154,13 @@ TextureImporter:
         width: 642
         height: 680
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_5
+      name: darksparky_run_5
       rect:
         serializedVersion: 2
         x: 0
@@ -167,13 +168,13 @@ TextureImporter:
         width: 639
         height: 680
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_6
+      name: darksparky_run_6
       rect:
         serializedVersion: 2
         x: 701
@@ -181,13 +182,13 @@ TextureImporter:
         width: 642
         height: 672
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_7
+      name: darksparky_run_7
       rect:
         serializedVersion: 2
         x: 1403
@@ -195,13 +196,13 @@ TextureImporter:
         width: 643
         height: 663
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_8
+      name: darksparky_run_8
       rect:
         serializedVersion: 2
         x: 2070
@@ -209,13 +210,13 @@ TextureImporter:
         width: 643
         height: 649
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_9
+      name: darksparky_run_9
       rect:
         serializedVersion: 2
         x: 2725
@@ -223,18 +224,32 @@ TextureImporter:
         width: 643
         height: 663
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SparkyDark_10
+      name: darksparky_run_10
       rect:
         serializedVersion: 2
         x: 3385
         y: 0
-        width: 1282
+        width: 635
+        height: 680
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: darksparky_run_11
+      rect:
+        serializedVersion: 2
+        x: 4029
+        y: 0
+        width: 635
         height: 680
       alignment: 0
       pivot: {x: 0, y: 0}

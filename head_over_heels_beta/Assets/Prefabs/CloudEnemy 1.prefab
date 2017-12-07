@@ -276,8 +276,9 @@ MonoBehaviour:
   player: {fileID: 0}
   minDistance: 10
   hoverSpeed: 0.05
-  hoverHeight: 4
-  flyAwayDistance: 7
+  hoverHeight: 5
+  flyAwayDistance: 10
+  particle: {fileID: 1780212616793222, guid: 857e7a1afd0c1414b84cc9ba14be9396, type: 2}
 --- !u!114 &114715880668988958
 MonoBehaviour:
   m_ObjectHideFlags: 1
