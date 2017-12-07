@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
 
 			grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, groundLayer);
 
-			if (Input.GetKeyDown (KeyCode.L) && !isTackling && grounded && blocked) {
+			if (Input.GetKeyDown (KeyCode.DownArrow) && !isTackling && grounded && blocked) {
 				isTackling = true;
 				speed = maxSpeed;
 			}

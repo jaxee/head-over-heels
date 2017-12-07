@@ -16,6 +16,10 @@ public class DestroyOnCollision : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		Destroy(gameObject);
+		if (col.gameObject.name.Contains ("Rain")) {
+			Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+		} else {
+			Destroy (gameObject);
+		}
 	}
 }
