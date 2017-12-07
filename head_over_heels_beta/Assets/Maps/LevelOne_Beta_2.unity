@@ -2408,6 +2408,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &832641923 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114657341133153628, guid: 520f2fb7c4f1548d1a46d9fead48c7c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 39254115}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &873698397
 Prefab:
   m_ObjectHideFlags: 0
@@ -5710,8 +5716,7 @@ MonoBehaviour:
   solCharacter: {fileID: 0}
   lunaCharacter: {fileID: 0}
   loooveTokens: {fileID: 652948471}
-  storyTokensText: {fileID: 0}
-  lives: {fileID: 0}
+  lives: {fileID: 832641923}
   playerLives: 0
   loveTokens: 0
   storyTokens: 0
