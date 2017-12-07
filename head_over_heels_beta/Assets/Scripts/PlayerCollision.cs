@@ -21,10 +21,10 @@ public class PlayerCollision : MonoBehaviour {
 	Vector2 lunaPillarStartPosition;
 	Vector2 lunaPillarEndPosition;
 
-	Vector2 lunaButtonStartPosition;
-	Vector2 lunaButtonEndPosition;
-	Vector2 solPillarStartPosition;
-	Vector2 solPillarEndPosition;
+	private Vector2 lunaButtonStartPosition;
+	private Vector2 lunaButtonEndPosition;
+	private Vector2 solPillarStartPosition;
+	private Vector2 solPillarEndPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -40,7 +40,6 @@ public class PlayerCollision : MonoBehaviour {
 		solButton = GameObject.Find ("sol_button");
 		solPillar = GameObject.Find ("sol_pillar");
 		lunaButton = GameObject.Find ("luna_button");
-		GetComponent<Renderer> ().enabled = flash;
 		solButtonStartPosition = new Vector2 (solButton.transform.position.x, solButton.transform.position.y );
 		solButtonEndPosition = new Vector2 (solButton.transform.position.x, (-27.37f) );
 		lunaPillarStartPosition = new Vector2 (lunaPillar.transform.position.x, lunaPillar.transform.position.y );
@@ -55,7 +54,9 @@ public class PlayerCollision : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (invincible) {
+			GetComponent<Renderer> ().enabled = flash;
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
@@ -172,6 +173,7 @@ public class PlayerCollision : MonoBehaviour {
 		invincible = false;
 		CancelInvoke ();
 		flash = true;
+		GetComponent<Renderer>().enabled = true;
 	}
 
 	void hitEffect()

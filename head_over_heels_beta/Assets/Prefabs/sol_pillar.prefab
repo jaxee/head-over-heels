@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212093438513104008}
   - component: {fileID: 61678425586754108}
   - component: {fileID: 61088304698193686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sol_pillar
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1118005178758400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.84, y: -30.65, z: 0}
-  m_LocalScale: {x: 0.1305368, y: 0.13053681, z: 0.13053681}
+  m_LocalPosition: {x: -53.31, y: -30.45, z: 0}
+  m_LocalScale: {x: 0.106423855, y: 0.10642387, z: 0.10642387}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

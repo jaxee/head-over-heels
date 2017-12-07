@@ -9,69 +9,92 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1957886152966048}
+  m_RootGameObject: {fileID: 1780212616793222}
   m_IsPrefabParent: 1
---- !u!1 &1957886152966048
+--- !u!1 &1780212616793222
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4877502896587492}
-  - component: {fileID: 212342596087931134}
-  - component: {fileID: 61173278707463700}
+  - component: {fileID: 4903621595090742}
+  - component: {fileID: 212062256150853390}
+  - component: {fileID: 70710760907478390}
+  - component: {fileID: 50962888408254694}
+  - component: {fileID: 114505386689129754}
   m_Layer: 0
-  m_Name: sol_button
-  m_TagString: Untagged
+  m_Name: RainDrop
+  m_TagString: SolObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4877502896587492
+--- !u!4 &4903621595090742
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1957886152966048}
+  m_GameObject: {fileID: 1780212616793222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -81.42, y: -29.69, z: 0}
-  m_LocalScale: {x: 0.16000009, y: 0.16000007, z: 0.16000007}
+  m_LocalPosition: {x: -70.81, y: -22.67, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61173278707463700
-BoxCollider2D:
+--- !u!50 &50962888408254694
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1957886152966048}
+  m_GameObject: {fileID: 1780212616793222}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.1
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0.1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &70710760907478390
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780212616793222}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: -0.1298306, y: 4.417309}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.49, y: 1.43}
-    newSize: {x: 22.99, y: 13.059999}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 14.415274, y: 4.225382}
-  m_EdgeRadius: 0
---- !u!212 &212342596087931134
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.37, y: 1.09}
+  m_Direction: 0
+--- !u!114 &114505386689129754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780212616793222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fe35830b0d94dd997aa7aff0b269d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &212062256150853390
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1957886152966048}
+  m_GameObject: {fileID: 1780212616793222}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -100,12 +123,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a5e2e828cd5ec4ece995e0a425f0646a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c646ae7c36a1843f19d9a113cc74e937, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 22.99, y: 13.059999}
+  m_Size: {x: 0.37, y: 1.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

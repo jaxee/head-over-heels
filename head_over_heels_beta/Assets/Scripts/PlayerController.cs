@@ -154,6 +154,16 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.gameObject.name.Contains ("button")) {
+			shouldMove = false;
+			speed = 0;
+			playerRigidBody.velocity = Vector2.zero;
+			playerRigidBody.angularVelocity = 0f;			
+		}
+			
+	}
+
 	// Called by the tackle animation
 	void EndTackle() {
 		isTackling = false;
