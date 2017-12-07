@@ -78,7 +78,9 @@ public class WorldManagerScript : MonoBehaviour {
 			loveTokens = 0;
 			storyTokens = 0;
 			dyingSound = solCharacter.GetComponent<AudioSource> ();
-			dyingSound.Play ();
+			if (!dyingSound.isPlaying && !solCharacter.GetComponent<PlayerController> ().playerAnimator.GetBool("IsDead")) {
+				dyingSound.Play ();
+			}
 
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.speed = 1;
 			solCharacter.GetComponent<PlayerController> ().playerAnimator.SetBool ("IsDead", true);
@@ -91,13 +93,27 @@ public class WorldManagerScript : MonoBehaviour {
 
 		if (solCharacter != null || lunaCharacter != null) {
 			if (solCharacter.GetComponent<PlayerController> ().hasReachedGoal && lunaCharacter.GetComponent<PlayerController> ().hasReachedGoal) {
-				SceneManager.LoadScene("cinematic_level1");
+
+				if (!GetComponent<AudioSource> ().isPlaying) {
+					AudioSource[] allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+
+					foreach(AudioSource audioSample in allAudioSources) {
+						audioSample.Stop();
+					}
+
+					GetComponent<AudioSource> ().Play ();
+				}
+				Invoke ("finishLevel", 2f);
 			}
 		}
 	}
 
 	public void restartLevel () {
 		SceneManager.LoadScene("LevelOne_FINAL");
+	}
+
+	public void finishLevel() {
+		SceneManager.LoadScene("cinematic_level1");
 	}
 
 	public void SwitchActiveWorld(bool isSolActive)

@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816473862320050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -88.20974, y: -59.48, z: 0}
+  m_LocalPosition: {x: -88.20974, y: -81.119995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4410660920253296}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 0}
+  playerAnimator: {fileID: 0}
   maxSpeed: 5
   moveRight: 1
   shouldMove: 1
@@ -178,8 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldManager: {fileID: 0}
-  solbuttonPressed: 0
-  lunabuttonPressed: 0
+  buttonPressed: 0
 --- !u!212 &212785331562210276
 SpriteRenderer:
   m_ObjectHideFlags: 1

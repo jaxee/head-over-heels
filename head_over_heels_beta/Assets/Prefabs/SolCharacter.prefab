@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 95478174078657462}
   - component: {fileID: 114712363897096242}
   - component: {fileID: 114134657312300048}
+  - component: {fileID: 82076279375050472}
   m_Layer: 0
   m_Name: SolCharacter
   m_TagString: Player
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1117492741419402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.99, y: -29.42, z: 0}
+  m_LocalPosition: {x: -89.4, y: -51.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4203342467115262}
@@ -93,7 +94,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!68 &68282344853287366
 EdgeCollider2D:
@@ -111,7 +112,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.7352426, y: 1.0181061}
-  - {x: 0.7290442, y: -0.97898626}
+  - {x: 0.7375488, y: -0.5026245}
 --- !u!70 &70623087503573714
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -127,6 +128,86 @@ CapsuleCollider2D:
   m_Offset: {x: 0.011645913, y: 0.008217812}
   m_Size: {x: 1.3077092, y: 2.2771626}
   m_Direction: 0
+--- !u!82 &82076279375050472
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117492741419402}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 00125ff6f524e0a45b8dab480fd10b3c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95478174078657462
 Animator:
   serializedVersion: 3
@@ -156,8 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldManager: {fileID: 0}
-  solbuttonPressed: 0
-  lunabuttonPressed: 0
+  buttonPressed: 0
 --- !u!114 &114712363897096242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 0}
+  playerAnimator: {fileID: 0}
   maxSpeed: 5
   moveRight: 1
   shouldMove: 1

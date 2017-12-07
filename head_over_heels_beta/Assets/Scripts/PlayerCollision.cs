@@ -16,6 +16,7 @@ public class PlayerCollision : MonoBehaviour {
 	AudioSource audioStoryToken;
 	AudioSource audioBox;
 	AudioSource audioGoal;
+	public AudioSource audioHit;
 
 	Vector3 startingPillarPosition;
 	Vector3 startingButtonPosition;
@@ -44,6 +45,7 @@ public class PlayerCollision : MonoBehaviour {
 				worldManager.playerLives--;
 				Invoke ("resetInvulnerability", 2);
 				InvokeRepeating ("hitEffect", 0, 0.25f);
+				audioHit.Play ();
 			}
 		}
 
@@ -63,21 +65,20 @@ public class PlayerCollision : MonoBehaviour {
 			StartCoroutine (MoveOverSeconds (col.gameObject, buttonEndPosition, 1f));
 		}
 	}
+		
+	void OnCollisionExit2D (Collision2D col) {
+		
+		if (col.gameObject.tag.Contains("Button") && buttonPressed == true) {
 
+			buttonPressed = false;
 
-void OnCollisionExit2D (Collision2D col) {
-	
-	if (col.gameObject.tag.Contains("Button") && buttonPressed == true) {
+			GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
 
-		buttonPressed = false;
+			StartCoroutine (MoveOverSeconds (pillar, startingPillarPosition, 3f));
+			StartCoroutine (MoveOverSeconds (col.gameObject, startingButtonPosition, 1f));
+		}
 
-		GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
-
-		StartCoroutine (MoveOverSeconds (pillar, startingPillarPosition, 3f));
-		StartCoroutine (MoveOverSeconds (col.gameObject, startingButtonPosition, 1f));
 	}
-
-}
 
 	void OnCollisionStay2D (Collision2D col)
 	{
@@ -87,6 +88,7 @@ void OnCollisionExit2D (Collision2D col) {
 				worldManager.playerLives--;
 				Invoke ("resetInvulnerability", 2);
 				InvokeRepeating ("hitEffect", 0, 0.25f);
+				audioHit.Play ();
 			}
 		}
 	}
