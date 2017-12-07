@@ -5710,7 +5710,6 @@ MonoBehaviour:
   solCharacter: {fileID: 0}
   lunaCharacter: {fileID: 0}
   loooveTokens: {fileID: 652948471}
-  storyTokensText: {fileID: 0}
   lives: {fileID: 0}
   playerLives: 0
   loveTokens: 0
