@@ -50,9 +50,9 @@ public class WorldManagerScript : MonoBehaviour {
 		storyTokens = 0;
 		setTokenText ();
 
-		//if (lives != null) {
+		if (lives != null) {
 			lives = GameObject.Find("Lives").GetComponent<Image>();
-		//}
+		}
 	}
 	
 	// Update is called once per frame
