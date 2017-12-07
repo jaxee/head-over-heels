@@ -10,7 +10,7 @@ public class WorldManagerScript : MonoBehaviour {
 	public GameObject solCharacter;
 	public GameObject lunaCharacter;
 	public Text loooveTokens;
-	public Text storyTokensText;
+	//public Text storyTokensText;
 	public Image lives;
 
 	public static GameObject[] solEnemies;
