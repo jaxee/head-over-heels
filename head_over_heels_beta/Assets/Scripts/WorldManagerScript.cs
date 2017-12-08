@@ -11,7 +11,8 @@ public class WorldManagerScript : MonoBehaviour {
 	public GameObject lunaCharacter;
 	public Text loooveTokens;
 	//public Text storyTokensText;
-	public Image lives;
+	public Image lives1;
+	public Image lives2;
 
 	public static GameObject[] solEnemies;
 	public static GameObject[] lunaEnemies;
@@ -46,13 +47,14 @@ public class WorldManagerScript : MonoBehaviour {
 		livesOne = Resources.Load<Sprite> ("Life-half");
 		livesZero = Resources.Load<Sprite> ("Life-dead");
 		unlockMysteryBox = false;
-		playerLives = 2;
+		playerLives = 4;
 		loveTokens = 0;
 		storyTokens = 0;
 		setTokenText ();
 
-		if (lives != null) {
-			lives = GameObject.Find("Lives").GetComponent<Image>();
+		if (lives1 != null) {
+			lives1 = GameObject.Find("Lives1").GetComponent<Image>();
+			lives2 = GameObject.Find("Lives2").GetComponent<Image>();
 		}
 	}
 	
@@ -67,14 +69,20 @@ public class WorldManagerScript : MonoBehaviour {
 			unlockMysteryBox = true;
 			mysteryBox.sprite = mysteryBoxUnlocked;
 		}
-		if (playerLives == 2 && scene.name == "LevelOne_FINAL") {
-
-			lives.sprite = livesTwo;
+		if (playerLives == 4 && scene.name == "LevelOne_FINAL") {
+			lives1.sprite = livesTwo;
+			lives2.sprite = livesTwo;
+		} 
+		else if (playerLives == 3 && scene.name == "LevelOne_FINAL") {
+			lives1.sprite = livesOne;
+		} 
+		else if (playerLives == 2 && scene.name == "LevelOne_FINAL") {
+			lives1.sprite = livesZero;
 		} else if (playerLives == 1 && scene.name == "LevelOne_FINAL") {
 			
-			lives.sprite = livesOne;
+			lives2.sprite = livesOne;
 		} else if (playerLives == 0 && scene.name == "LevelOne_FINAL") {
-			lives.sprite = livesZero;
+			lives2.sprite = livesZero;
 			loveTokens = 0;
 			storyTokens = 0;
 			dyingSound = solCharacter.GetComponent<AudioSource> ();
