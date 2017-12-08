@@ -10,6 +10,7 @@ public class ManageScenes : MonoBehaviour {
 	public Button startLevelOne;
 	public Button backToHome;
 	public Button goToHome;
+	public Button mysterBox;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,10 @@ public class ManageScenes : MonoBehaviour {
 
 		if (goToHome != null) {
 			goToHome.onClick.AddListener(GoToHome);
+		}
+
+		if (mysterBox != null) {
+			mysterBox.onClick.AddListener(LevelOneCinematic);
 		}
 	}
 	
@@ -49,6 +54,11 @@ public class ManageScenes : MonoBehaviour {
 		Debug.Log ("Go to home screen!");
 		PlayerPrefs.DeleteAll();
 		SceneManager.LoadScene ("interface", LoadSceneMode.Single);
+	}
+
+	void LevelOneCinematic () {
+		Debug.Log ("Start cinematic level ones");
+		SceneManager.LoadScene ("cinematic_level1", LoadSceneMode.Single);
 	}
 }
 
