@@ -50,7 +50,7 @@ public class PlayerCollision : MonoBehaviour {
 
 			GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
 
-			StartCoroutine (MoveOverSeconds (pillar, col.gameObject.GetComponent<PillarToMove>().pillarEndPosition, 3f));
+			StartCoroutine (MoveOverSeconds (pillar, col.gameObject.GetComponent<PillarToMove>().pillarEndPosition, 1f));
 			StartCoroutine (MoveOverSeconds (col.gameObject, col.gameObject.GetComponent<PillarToMove>().buttonEndPosition, 1f));
 
 			Debug.Log ("Pressed button");
@@ -75,7 +75,7 @@ public class PlayerCollision : MonoBehaviour {
 
 			GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
 
-			StartCoroutine (MoveOverSeconds (pillar, col.gameObject.GetComponent<PillarToMove>().startingPillarPosition, 3f));
+			StartCoroutine (MoveOverSeconds (pillar, col.gameObject.GetComponent<PillarToMove>().startingPillarPosition, 1f));
 			StartCoroutine (MoveOverSeconds (col.gameObject, col.gameObject.GetComponent<PillarToMove>().startingButtonPosition, 1f));
 
 			Debug.Log ("Released button");
