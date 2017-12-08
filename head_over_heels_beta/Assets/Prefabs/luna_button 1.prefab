@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343725932482736}
   - component: {fileID: 212925858760049630}
+  - component: {fileID: 61424332944473472}
   m_Layer: 8
   m_Name: luna_justStump
   m_TagString: Ground
@@ -52,10 +53,10 @@ GameObject:
   - component: {fileID: 4371906138297774}
   - component: {fileID: 212230523899486584}
   - component: {fileID: 61083868477767148}
-  - component: {fileID: 68039724347629578}
+  - component: {fileID: 114997620711141240}
   m_Layer: 8
   m_Name: luna_button
-  m_TagString: Ground
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813852385839928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -78.84, y: -55.37, z: 0.45361525}
+  m_LocalPosition: {x: -80.94, y: -81.87, z: 0.45361525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4343725932482736}
@@ -124,26 +125,49 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1}
+  m_Size: {x: 1.24, y: 1}
   m_EdgeRadius: 0
---- !u!68 &68039724347629578
-EdgeCollider2D:
+--- !u!61 &61424332944473472
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860287429879268}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1270786476339298}
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.68, y: 2.51}
+    newSize: {x: 5.68, y: 2.51}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.96, y: 1.57}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -3.293632, y: 4.76825}
-  - {x: -1.3715738, y: 5.912611}
-  - {x: 4.6287518, y: 5.5311418}
+--- !u!114 &114997620711141240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860287429879268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3accc80b991402e966282ee3e1b545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pillar: {fileID: 0}
+  startingButtonPosition: {x: 0, y: 0, z: 0}
+  startingPillarPosition: {x: 0, y: 0, z: 0}
+  buttonEndPosition: {x: 0, y: 0, z: 0}
+  pillarEndPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &212230523899486584
 SpriteRenderer:
   m_ObjectHideFlags: 1

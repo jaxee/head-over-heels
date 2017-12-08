@@ -18,9 +18,6 @@ public class PlayerCollision : MonoBehaviour {
 	AudioSource audioGoal;
 	public AudioSource audioHit;
 
-	Vector3 startingPillarPosition;
-	Vector3 startingButtonPosition;
-
 	// Use this for initialization
 	void Start () {
 		worldManager = GameObject.Find ("WorldManager").GetComponent<WorldManagerScript>();
@@ -49,35 +46,15 @@ public class PlayerCollision : MonoBehaviour {
 			}
 		}
 
-		if (col.gameObject.tag.Contains("Button") && buttonPressed == false) {
-
-			buttonPressed = true;
+		if (col.gameObject.tag.Contains("Button")) {
 
 			GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
 
-			startingButtonPosition = col.gameObject.transform.position;
-			startingPillarPosition = pillar.transform.position;
+			StartCoroutine (MoveOverSeconds (pillar, col.gameObject.GetComponent<PillarToMove>().pillarEndPosition, 3f));
+			StartCoroutine (MoveOverSeconds (col.gameObject, col.gameObject.GetComponent<PillarToMove>().buttonEndPosition, 1f));
 
-			Vector3 buttonEndPosition = new Vector3 (col.transform.position.x, col.transform.position.y - 0.5f, 0f );
-			Vector3 pillarEndPosition = new Vector3 (pillar.transform.position.x, pillar.transform.position.y + 3f, 0f );
-
-			StartCoroutine (MoveOverSeconds (pillar, pillarEndPosition, 3f));
-			StartCoroutine (MoveOverSeconds (col.gameObject, buttonEndPosition, 1f));
+			Debug.Log ("Pressed button");
 		}
-	}
-		
-	void OnCollisionExit2D (Collision2D col) {
-		
-		if (col.gameObject.tag.Contains("Button") && buttonPressed == true) {
-
-			buttonPressed = false;
-
-			GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
-
-			StartCoroutine (MoveOverSeconds (pillar, startingPillarPosition, 3f));
-			StartCoroutine (MoveOverSeconds (col.gameObject, startingButtonPosition, 1f));
-		}
-
 	}
 
 	void OnCollisionStay2D (Collision2D col)
@@ -90,6 +67,19 @@ public class PlayerCollision : MonoBehaviour {
 				InvokeRepeating ("hitEffect", 0, 0.25f);
 				audioHit.Play ();
 			}
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D col) {
+		if (col.gameObject.tag.Contains("Button")) {
+
+			GameObject pillar = col.gameObject.GetComponent<PillarToMove>().Pillar;
+
+			StartCoroutine (MoveOverSeconds (pillar, col.gameObject.GetComponent<PillarToMove>().startingPillarPosition, 3f));
+			StartCoroutine (MoveOverSeconds (col.gameObject, col.gameObject.GetComponent<PillarToMove>().startingButtonPosition, 1f));
+
+			Debug.Log ("Released button");
+
 		}
 	}
 
@@ -131,7 +121,7 @@ public class PlayerCollision : MonoBehaviour {
 		}
 
 	}
-		
+
 	public IEnumerator MoveOverSeconds (GameObject objectToMove, Vector3 end, float seconds)
 	{
 		float elapsedTime = 0;

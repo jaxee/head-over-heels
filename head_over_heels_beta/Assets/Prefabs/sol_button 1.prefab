@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845746233228902}
   - component: {fileID: 212410162599306718}
-  - component: {fileID: 61404535547110040}
+  - component: {fileID: 61774845210749300}
   m_Layer: 0
   m_Name: sol_justRocks
   m_TagString: Ground
@@ -38,9 +38,10 @@ GameObject:
   - component: {fileID: 4651025791095684}
   - component: {fileID: 212699068538346792}
   - component: {fileID: 61974040945557164}
+  - component: {fileID: 114880534007438310}
   m_Layer: 8
   m_Name: sol_button
-  m_TagString: Ground
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,19 +102,19 @@ Transform:
   m_Father: {fileID: 4516993779019098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61404535547110040
+--- !u!61 &61774845210749300
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1219437727608314}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.18, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -124,7 +125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.52, y: 2.31}
+  m_Size: {x: 2.68, y: 2.51}
   m_EdgeRadius: 0
 --- !u!61 &61974040945557164
 BoxCollider2D:
@@ -151,6 +152,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.43}
   m_EdgeRadius: 0
+--- !u!114 &114880534007438310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1248924443087516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3accc80b991402e966282ee3e1b545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pillar: {fileID: 0}
+  startingButtonPosition: {x: 0, y: 0, z: 0}
+  startingPillarPosition: {x: 0, y: 0, z: 0}
+  buttonEndPosition: {x: 0, y: 0, z: 0}
+  pillarEndPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &212410162599306718
 SpriteRenderer:
   m_ObjectHideFlags: 1
