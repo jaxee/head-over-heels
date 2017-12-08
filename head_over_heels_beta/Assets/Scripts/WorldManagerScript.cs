@@ -96,6 +96,9 @@ public class WorldManagerScript : MonoBehaviour {
 			lives2.sprite = livesZero;
 			loveTokens = 0;
 			storyTokens = 0;
+			PlayerPrefs.SetInt ("LoveTokens", loveTokens);
+			PlayerPrefs.SetInt ("StoryboardTokens", storyTokens);
+
 			dyingSound = solCharacter.GetComponent<AudioSource> ();
 			if (!dyingSound.isPlaying && !solCharacter.GetComponent<PlayerController> ().playerAnimator.GetBool("IsDead")) {
 				dyingSound.Play ();

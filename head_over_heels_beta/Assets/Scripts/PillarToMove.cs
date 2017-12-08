@@ -16,7 +16,7 @@ public class PillarToMove : MonoBehaviour {
 		startingButtonPosition = transform.position;
 		startingPillarPosition = Pillar.transform.position;
 		buttonEndPosition = new Vector3 (transform.position.x, transform.position.y - 0.5f, 0f );
-		pillarEndPosition = new Vector3 (Pillar.transform.position.x, Pillar.transform.position.y + 3f, 0f );
+		pillarEndPosition = new Vector3 (Pillar.transform.position.x, Pillar.transform.position.y + 4f, 0f );
 	}
 	
 	// Update is called once per frame
