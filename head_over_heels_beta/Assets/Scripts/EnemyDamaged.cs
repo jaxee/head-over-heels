@@ -18,11 +18,15 @@ public class EnemyDamaged : MonoBehaviour {
 	{
 		if (col.gameObject.tag.Contains ("Obstacle")) {
 			//Play dead animation
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			gameObject.SetActive(false);
+
 		}
 		if (col.gameObject.transform.childCount > 0) {
 			if (col.gameObject.transform.GetChild (0).gameObject.tag.Contains ("Obstacle")) {
-				Destroy(gameObject);
+				//Destroy(gameObject);
+				gameObject.SetActive(false);
+
 			}
 		}
 
