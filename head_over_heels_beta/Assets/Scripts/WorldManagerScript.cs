@@ -129,7 +129,7 @@ public class WorldManagerScript : MonoBehaviour {
 	}
 
 	public void finishLevel() {
-		SceneManager.LoadScene("cinematic_level1");
+		SceneManager.LoadScene("interface");
 	}
 
 	public void SwitchActiveWorld(bool isSolActive)
