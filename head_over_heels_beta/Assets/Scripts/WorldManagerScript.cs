@@ -32,6 +32,7 @@ public class WorldManagerScript : MonoBehaviour {
 	private Sprite livesZero;
 	private Image mysteryBox;
 	private Sprite mysteryBoxUnlocked;
+	private bool isTutorial;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +52,7 @@ public class WorldManagerScript : MonoBehaviour {
 		loveTokens = 0;
 		storyTokens = 0;
 		setTokenText ();
+		isTutorial = true;
 
 		if (lives1 != null) {
 			lives1 = GameObject.Find("Lives1").GetComponent<Image>();
@@ -63,6 +65,12 @@ public class WorldManagerScript : MonoBehaviour {
 
 		storyTokens = PlayerPrefs.GetInt ("StoryboardTokens");
 		Scene scene = SceneManager.GetActiveScene();
+
+		if (scene.name == "LevelOne_FINAL" && isTutorial) {
+			PauseGame ();
+			isTutorial = false;
+		}
+
 		if (storyTokens == 1 && scene.name == "interface") {
 			mysteryBoxUnlocked = Resources.Load<Sprite> ("MysteryBox");
 			mysteryBox = GameObject.Find("StoryBox_One").GetComponent<Image>();
