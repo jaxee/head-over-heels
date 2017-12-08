@@ -33,6 +33,7 @@ public class WorldManagerScript : MonoBehaviour {
 	private Image mysteryBox;
 	private Sprite mysteryBoxUnlocked;
 	private bool isTutorial;
+	private Button mysteryBoxBtn;
 
 	// Use this for initialization
 	void Start () {
@@ -53,6 +54,7 @@ public class WorldManagerScript : MonoBehaviour {
 		storyTokens = 0;
 		setTokenText ();
 		isTutorial = true;
+		mysteryBoxBtn = GameObject.Find ("StoryBox_One").GetComponent<Button>();
 
 		if (lives1 != null) {
 			lives1 = GameObject.Find("Lives1").GetComponent<Image>();
@@ -76,6 +78,7 @@ public class WorldManagerScript : MonoBehaviour {
 			mysteryBox = GameObject.Find("StoryBox_One").GetComponent<Image>();
 			unlockMysteryBox = true;
 			mysteryBox.sprite = mysteryBoxUnlocked;
+			mysteryBoxBtn.interactable = true;
 		}
 		if (playerLives == 4 && scene.name == "LevelOne_FINAL") {
 			lives1.sprite = livesTwo;
@@ -150,6 +153,9 @@ public class WorldManagerScript : MonoBehaviour {
 
 	public void PauseEnemies(bool isSolActive)
 	{
+		//solEnemies = GameObject.FindGameObjectsWithTag ("SolEnemy");
+		//lunaEnemies = GameObject.FindGameObjectsWithTag ("LunaEnemy");
+
 		if (isSolActive && solEnemies != null && lunaEnemies != null) {
 			foreach(GameObject Enemy in solEnemies) {
 				Enemy.SetActive (false);
