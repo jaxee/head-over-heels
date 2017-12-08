@@ -2785,7 +2785,8 @@ MonoBehaviour:
   lunaCharacter: {fileID: 1448568726374142, guid: 3eb801908730a4e71a0b3a4b332d195f,
     type: 2}
   loooveTokens: {fileID: 1254364050}
-  lives: {fileID: 0}
+  lives1: {fileID: 0}
+  lives2: {fileID: 0}
   playerLives: 0
   loveTokens: 0
   storyTokens: 0
@@ -5924,6 +5925,7 @@ MonoBehaviour:
   startLevelOne: {fileID: 0}
   backToHome: {fileID: 0}
   goToHome: {fileID: 0}
+  mysterBox: {fileID: 274312895}
 --- !u!1 &1733884954
 GameObject:
   m_ObjectHideFlags: 0

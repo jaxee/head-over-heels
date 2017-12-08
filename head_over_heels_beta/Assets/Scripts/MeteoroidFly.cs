@@ -30,6 +30,7 @@ public class MeteoroidFly : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		Destroy(gameObject);
+		//Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 }
