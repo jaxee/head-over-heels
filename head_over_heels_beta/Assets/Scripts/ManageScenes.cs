@@ -37,7 +37,7 @@ public class ManageScenes : MonoBehaviour {
 
 	void StartLevelOne () {
 		Debug.Log("Begin level one!");
-		SceneManager.LoadScene("LevelOne_Beta_2", LoadSceneMode.Single);
+		SceneManager.LoadScene("LevelOne_FINAL", LoadSceneMode.Single);
 	}
 
 	void ReturnToHome () {

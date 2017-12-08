@@ -136,15 +136,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1036411020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 3.1999998, z: 0}
-  m_LocalScale: {x: 1.2500031, y: 0.9163802, z: 1}
+  m_LocalPosition: {x: 1.3792877, y: 3.1998844, z: 0}
+  m_LocalScale: {x: 1.7241416, y: 0.91638017, z: 1}
   m_Children: []
   m_Father: {fileID: 1748874496}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 3.2}
+  m_AnchoredPosition: {x: 1.3792872, y: 3.1998842}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1036411022
@@ -179,7 +179,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Level One
+  m_Text: 'Start
+
+'
 --- !u!222 &1036411023
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -292,8 +294,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748874495}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08000183, y: 4.2199993, z: 0}
-  m_LocalScale: {x: 0.016395839, y: 0.022365008, z: 0.02049485}
+  m_LocalPosition: {x: -0.08000183, y: 4.37, z: 0}
+  m_LocalScale: {x: 0.011886988, y: 0.022365008, z: 0.02049485}
   m_Children:
   - {fileID: 1036411021}
   m_Father: {fileID: 1878477160}
@@ -301,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.08, y: 4.22}
+  m_AnchoredPosition: {x: -0.08, y: 4.37}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748874497
@@ -318,6 +320,7 @@ MonoBehaviour:
   levelOne: {fileID: 0}
   startLevelOne: {fileID: 1748874498}
   backToHome: {fileID: 0}
+  goToHome: {fileID: 0}
 --- !u!114 &1748874498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +533,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1878477160
 RectTransform:
@@ -544,7 +547,7 @@ RectTransform:
   m_Children:
   - {fileID: 1748874496}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -578,7 +581,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919003174}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2141d38d0c5d44ec98d01ae1ef4d8f13, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: f13c1d4a938204c9cae89cb3560b9529, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera: {fileID: 0}
   m_TargetTexture: {fileID: 0}
@@ -589,7 +592,7 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 1
+  m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -663,11 +666,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919003174}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.62, z: -0.33711794}
-  m_LocalScale: {x: 6.823554, y: 8.536366, z: 0.67183226}
+  m_LocalPosition: {x: 0, y: 0, z: 0.99}
+  m_LocalScale: {x: 8.230297, y: 10.296221, z: 0.81033695}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!82 &1919003180
 AudioSource:
@@ -675,7 +678,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919003174}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f90e1a895f7eb4bbba0451ffa428c457, type: 3}
